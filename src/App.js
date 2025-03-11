@@ -25,7 +25,7 @@ class App extends Component {
           </div>
           <aside style={styles.ads}>
             Advertisement
-            <Ads adsTitle="Ads"                                               wwwwww  
+            <Ads adsTitle="Ads"                                              
             adsSubTitle="Advertise with us"
             adsContent="ad content"/>
             <Ads adsTitle="Ads"

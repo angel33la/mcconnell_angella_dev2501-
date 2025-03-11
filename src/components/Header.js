@@ -3,7 +3,6 @@ import logo from '../images/logo.png';
 import avatar from '../images/avatar.png';
 import { BiSearchAlt } from "react-icons/bi";
 import { BiSolidCog } from "react-icons/bi";
-import { BiLogoDigg } from "react-icons/bi";
 
 
 
@@ -11,7 +10,7 @@ const Header = props => {
     return (
         <header style={styles.header}>
             <div style={styles.logo}>
-                <img src={BiLogoDigg} alt="logo" style={styles.logoImg}/>
+                <img src={logo} alt="logo" style={styles.logoImg}/>
                 <h1 style={{marginLeft: '10px'}}>{props.pgTitle}</h1>
             </div>
             <form style={styles.searchContainer}>
