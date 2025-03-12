@@ -1,78 +1,57 @@
 import React from 'react';
-import logo from '../images/logo.png';
-import avatar from '../images/avatar.png';
-import { BiSearchAlt } from "react-icons/bi";
-import { BiSolidCog } from "react-icons/bi";
+import styled from 'styled-components';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { MdSettings } from 'react-icons/md';
 
+const HeaderContainer = styled.header `
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+`;
 
+const Logo = styled.div `
+    font-size: 24px;
+    font-weight: bold;
+`;
 
-const Header = props => {
-    return (
-        <header style={styles.header}>
-            <div style={styles.logo}>
-                <img src={logo} alt="logo" style={styles.logoImg}/>
-                <h1 style={{marginLeft: '10px'}}>{props.pgTitle}</h1>
-            </div>
-            <form style={styles.searchContainer}>
-                <input type="text" placeholder={props.placeholder} style={styles.searchInput}/>
-                <BiSearchAlt style={styles.searchIcon}/>
-            </form>
-            <div style={styles.user}>
-                <img src={avatar} alt="avatar" style={styles.avatar}/>
-                <span>Angelina Love</span>
-                <BiSolidCog style={styles.cog}/>
-            </div>
-        </header>
-    );
-}
-export default Header;
+const SearchContainer = styled.div `
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+`;
 
-const styles = {
-    header: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '10px',
-        backgroundColor: '#fff',
-        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-        height: '50px'
-    },
-    logo: {
-        display: 'flex',
-        alignItems: 'center'
-    },
-    logoImg: {
-        height: '30px',
-        width: '30px'
-    },
-    search: {
-        display: 'flex',
-        alignItems: 'center',
-        border: '1px solid #ccc',
-        borderRadius: '5px',
-        padding: '5px'
-    },
-    searchInput: {
-        border: 'none',
-        outline: 'none',
-        padding: '5px'
-    },
-    searchIcon: {
-        color: '#aaa'
-    },
-    user: {
-        display: 'flex',
-        alignItems: 'center'
-    },
-    avatar: {
-        height: '30px',
-        width: '30px',
-        borderRadius: '50%'
-    },
-    cog: {
-        color: '#aaa',
-        marginLeft: '10px'
+const SearchInput = styled.input `
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+`;
+
+const Avatar = styled.div `
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 20px;
+`;
+
+class Header extends React.Component {
+    render() {
+        return ( <HeaderContainer>
+            <Logo>{this.props.logo}</Logo>
+            <SearchContainer>
+                <AiOutlineSearch size={24} color="#ccc" />
+                <SearchInput type="text" placeholder={this.props.searchPlaceholder} />
+            </SearchContainer>
+            <Avatar src={this.props.avatarSrc} />
+            <MdSettings size={24} color="#ccc" />
+                </HeaderContainer>
+        );
     }
 }
-// };   
+
+export default Header;

@@ -1,79 +1,62 @@
 import React, { Component } from 'react';
-import Header from './components/Header.js';
-import Nav from './components/Nav.js';
-import Footer from'./components/Footer.js';
-import Ads from './components/Ads.js';
-import MyForm from './components/MyForm.js';
-import MyBtn from './components/buttons/MyBtn.js';
-import ButtonStandard from './components/buttons/ButtonStandard.js';
-import ButtonSmall from './components/buttons/ButtonSmall.js';
+import Header from '../src/components/Header.js';
+import Navigation from './components/Navigation.js';
+import AdCard from '../src/components/AdCard.js';
+import PostCard from '../src/components/PostCard.js';
+import Form from '../src/components/Form.js';
+
 
 class App extends Component {
   render() {
+    const logo = '../src/images/logo.png';
+    const searchPlaceholder = 'Search';
+    const avatarSrc = '../src/images/avatar.png';
+    const adImage1 = 'https://via.placeholder.com/300x150';
+    const adTitle1 = 'Ad Title 1';
+    const adSubtitle1 = 'Ad Subtitle 1';
+    const adImage2 = 'https://via.placeholder.com/300x150';
+    const adTitle2 = 'Ad Title 2';
+    const adSubtitle2 = 'Ad Subtitle 2';
+    const postAvatar = 'https://via.placeholder.com/40x40';
+    const postTitle = 'Post Title';
+    const postDescription = 'Post Description';
+
+    const handleEdit = () => {
+      console.log('Edit button clicked');
+    };
+
+    const handleDelete = () => {
+      console.log('Delete button clicked');
+    };
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log('Form submitted');
+    };
+
     return (
-      <div className="App">
-        <Header pgTitle="Home" placeholder="Search..."/>
-        <div style={styles.container}>
-          <Nav style={styles.nav}/>
-          <div style={styles.content}>
-            <MyForm />
-            <div>
-              <MyBtn btnText="Click Me" />
-              <ButtonStandard btnText="Standard Button" />
-              <ButtonSmall btnText="Small Button" />
-            </div>
+      <div>
+        <Header logo={logo} searchPlaceholder={searchPlaceholder} avatarSrc={avatarSrc} />
+        <div style={{ display: 'flex' }}>
+          <Navigation />
+          <div style={{ padding: '20px' }}>
+            <Form title="Post Title" description="Post Description" onSubmit={handleSubmit} />
+            <PostCard
+              avatar={postAvatar}
+              title={postTitle}
+              description={postDescription}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+            />
           </div>
-          <aside style={styles.ads}>
-            Advertisement
-            <Ads adsTitle="Ads"                                              
-            adsSubTitle="Advertise with us"
-            adsContent="ad content"/>
-            <Ads adsTitle="Ads"
-            adsSubTitle="Advertise with us"
-            adsContent="ad content"/>
-            <Ads adsTitle="Ads"
-            adsSubTitle="Advertise with us"
-            adsContent="ad content"/>
-          </aside>
+          <div style={{ padding: '20px' }}>
+            <AdCard image={adImage1} title={adTitle1} subtitle={adSubtitle1} />
+            <AdCard image={adImage2} title={adTitle2} subtitle={adSubtitle2} />
+          </div>
         </div>
-        <Footer />
       </div>
     );
   }
 }
 
 export default App;
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    background: 'WhiteSmoke',
-    padding: '10px',
-    height: '100vh'
-  },
-  '@media (min-width: 1024px)': {
-    button: {
-      fontSize: 16
-    }
-  },
-  nav: {
-    display: 'flex',
-  },
-  content: {
-    display: 'flex',
-    flex: 2
-  },
-  ads: {
-    display: 'flex',
-    flexDirection: 'column',
-    flex: 1,
-    padding: '10px',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    backgroundColor: 'White',
-    height: 'fit-content'
-  }
-}
