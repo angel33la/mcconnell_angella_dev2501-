@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import Header from '../src/components/Header.js';
+import Header from '../components/Header.js';
 import Navigation from './components/Navigation.js';
-import AdCard from '../src/components/AdCard.js';
-import PostCard from '../src/components/PostCard.js';
-import Form from '../src/components/Form.js';
+import AdCard from '../components/AdCard.js';
+import PostCard from '../components/PostCard.js';
+import Form from '../components/Form.js';
 
 
 class App extends Component {
   render() {
-    const logo = '../src/images/logo.png';
+    const logo = '../images/logo.png';
     const searchPlaceholder = 'Search';
-    const avatarSrc = '../src/images/avatar.png';
+    const avatarSrc = '../images/avatar.png';
     const adImage1 = 'https://via.placeholder.com/300x150';
     const adTitle1 = 'Ad Title 1';
     const adSubtitle1 = 'Ad Subtitle 1';
