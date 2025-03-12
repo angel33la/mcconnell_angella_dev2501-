@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const NavigationContainer = styled.nav `
   display: flex;
@@ -10,16 +10,17 @@ const NavigationContainer = styled.nav `
   color: #fff;
 `;
 
-const LinkContainer = styled(Link)
-`
+const LinkContainer = styled.button`
   padding: 10px;
   border-bottom: 1px solid #ccc;
   color: #fff;
   text-decoration: none;
 `;
 
-class Navigation extends React.Component {
-    render() {
+//Const Var.
+const Navigation = () => {
+// class Navigation extends React.Component {
+//     render() {
         return ( 
         <NavigationContainer> 
             <LinkContainer to = "#"> Newsfeed </LinkContainer> 
@@ -28,6 +29,6 @@ class Navigation extends React.Component {
         </NavigationContainer>
         );
     }
-}
+// }
 
 export default Navigation;

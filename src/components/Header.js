@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { CiSearch } from "react-icons/ci";
 import { CiSettings } from "react-icons/ci";
-
-
+// import LogoImg from '../images/logo.png';
+import AvatarImg from '../images/avatar.png';
 const HeaderContainer = styled.header `
     display: flex;
     justify-content: space-between;
@@ -13,10 +13,10 @@ const HeaderContainer = styled.header `
     color: #00f5d4ff;
 `;
 
-const Logo = styled.div `
-    font-size: 24px;
-    font-weight: bold;
-`;
+// const Logo = styled.img `
+//     font-size: 24px;
+//     font-weight: bold;
+// `;
 
 const SearchContainer = styled.div `
     display: flex;
@@ -39,20 +39,22 @@ const Avatar = styled.div `
     background-color: #f15bb5ff;
     margin-right: 20px;
 `;
+const Header = (props) => {
+// class Header extends React.Component {
+    // render() {
+        return ( 
+        <HeaderContainer>
+            {/* <img src={AvatarImg} alt="Logo" /> */}
+            {/* <img placeholder="It does not like this image" /> */}
 
-class Header extends React.Component {
-    render() {
-        return ( <HeaderContainer>
-            <Logo>{this.props.logo}</Logo>
             <SearchContainer>
                 <CiSearch size={24} color="#ccc" />
-                <SearchInput type="text" placeholder={this.props.searchPlaceholder} />
+                <SearchInput type="text" placeholder={props.searchPlaceholder} />
             </SearchContainer>
-            <Avatar src={this.props.avatarSrc} />
+            <Avatar src={props.avatarSrc} />
             <CiSettings size={24} color="#ccc" />
-                </HeaderContainer>
+        </HeaderContainer>
         );
     }
-}
 
 export default Header;
