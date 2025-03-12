@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../src/components/buttons/Button.js';
+import Button from '../components/buttons/Button.js';
 
 const FormContainer = styled.form`
     display: flex;

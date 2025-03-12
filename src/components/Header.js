@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { MdSettings } from 'react-icons/md';
+import { CiSearch } from "react-icons/ci";
+import { CiSettings } from "react-icons/ci";
+
 
 const HeaderContainer = styled.header `
     display: flex;
@@ -9,7 +10,7 @@ const HeaderContainer = styled.header `
     align-items: center;
     padding: 20px;
     background-color: #333;
-    color: #fff;
+    color: #00f5d4ff;
 `;
 
 const Logo = styled.div `
@@ -35,7 +36,7 @@ const Avatar = styled.div `
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #ccc;
+    background-color: #f15bb5ff;
     margin-right: 20px;
 `;
 
@@ -44,11 +45,11 @@ class Header extends React.Component {
         return ( <HeaderContainer>
             <Logo>{this.props.logo}</Logo>
             <SearchContainer>
-                <AiOutlineSearch size={24} color="#ccc" />
+                <CiSearch size={24} color="#ccc" />
                 <SearchInput type="text" placeholder={this.props.searchPlaceholder} />
             </SearchContainer>
             <Avatar src={this.props.avatarSrc} />
-            <MdSettings size={24} color="#ccc" />
+            <CiSettings size={24} color="#ccc" />
                 </HeaderContainer>
         );
     }
