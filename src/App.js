@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/Header.js';
-import Navigation from './components/Navigation.js';
+import Navigation from '../components/Navigation.js';
 import AdCard from '../components/AdCard.js';
 import PostCard from '../components/PostCard.js';
 import Form from '../components/Form.js';
