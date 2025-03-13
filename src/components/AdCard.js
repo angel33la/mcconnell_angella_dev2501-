@@ -12,21 +12,21 @@ const AdCardContainer = styled.div`
 
 const Image = styled.img`
     width: 100%;
-    height: 150px;
+    height: 100px;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
 `;
 
 const Title = styled.h2`
-    padding: 10px;
-    font-size: 18px;
+    padding: 5px;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #f15bb5ff;
 `;
 
 const Subtitle = styled.p`
-    padding: 10px;
-    font-size: 14px;
+    padding: 5px;
+    font-size: 1.5rem;
     color: #9b5de5ff;
 `;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 // images
-import ImageUrl from '../images/favicon1.png';
+import ImageUrl from '../images/icons8-female-profile-96.png';
+import ImageUrl2 from '../images/favicon1.png';
 import MyIcons from './MyIcons';
 // components
 import { FaSearch, FaEnvelope, FaBell } from 'react-icons/fa';
@@ -8,9 +9,11 @@ import { FaSearch, FaEnvelope, FaBell } from 'react-icons/fa';
 
 const Header = (props) => {
         return ( 
-        <Header style={styles.HeaderContainer}>
+        <header style={styles.myHeader}>
             <div style={styles.left}>
-                <div style={styles.logo}></div>
+                <div style={styles.logo}>
+                <MyIcons IconImg={ImageUrl2} ImageAlt="Woman Profile"/>
+                </div>
                 <h1>mingoBook</h1>
             </div>
             <div style={styles.searchCont}>
@@ -21,7 +24,7 @@ const Header = (props) => {
                 <button style={styles.rightIcons}><FaBell/></button>
                 <MyIcons IconImg={ImageUrl} ImageAlt="Woman Profile"/>
             </div>
-            </Header>
+            </header>
         );
     }
 
@@ -29,7 +32,7 @@ const Header = (props) => {
 export default Header;
 
 const styles = {
-    HeaderContainer: {
+    myHeader: {
         // margin: '1%',
             padding: '1%',
             display: 'flex',

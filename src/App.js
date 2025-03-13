@@ -24,7 +24,10 @@ class App extends Component {
               <AdCard  title="Ad Title 3" subtitle="Ad Subtitle 3" adsContent="Ad Content 3"/>  
             </aside>
         </div>
+        <div>
         <PostCard />
+        </div>
+        
       </div>
     );
   }
