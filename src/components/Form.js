@@ -18,16 +18,14 @@ const Input = styled.input`
     border-radius: 5px;
 `;
 
-class Form extends React.Component {
-render() {
+const Form = (props) => {
     return (
-        <FormContainer onSubmit={this.props.onSubmit}>
-        <Input type="text" placeholder="Post Title" value={this.props.title} />
-        <Input type="text" placeholder="Post Description" value={this.props.description} />
+        <FormContainer onSubmit={props.onSubmit}>
+        <Input type="text" placeholder="Post Title" value={props.title} />
+        <Input type="text" placeholder="Post Description" value={props.description} />
         <Button type="submit">Submit</Button>
         </FormContainer>
     );
-    }
 }
 
 export default Form;
