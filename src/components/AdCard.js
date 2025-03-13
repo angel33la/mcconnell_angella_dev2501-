@@ -30,16 +30,14 @@ const Subtitle = styled.p`
     color: #9b5de5ff;
 `;
 
-class AdCard extends React.Component {
-render() {
+const AdCard = (props) => {
     return (
         <AdCardContainer>
-            <Image src={this.props.image} />
-        <Title>{this.props.title}</Title>
-        <Subtitle>{this.props.subtitle}</Subtitle>
+            <Image src={props.image} />
+        <Title>{props.title}</Title>
+        <Subtitle>{props.subtitle}</Subtitle>
         </AdCardContainer>
     );
-    }
 }
 
 export default AdCard;

@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { AiOutlineDelete } from 'react-icons/ai';
+// images
+/* import Logo from './images/logo.png';
+import AvatarSrc from './images/avatar.png'; */
 
 const PostCardContainer = styled.div`
   display: flex;
@@ -38,20 +41,19 @@ const ButtonContainer = styled.div`
   padding: 10px;
 `;
 
-class PostCard extends React.Component {
-  render() {
+const PostCard = (props) =>{
     return (
       <PostCardContainer>
-        <Avatar src={this.props.avatar} />
-        <Title>{this.props.title}</Title>
-        <Description>{this.props.description}</Description>
+        <Avatar src={props.AvatarSrc} />
+        <Title>{props.title}</Title>
+        <Description>{props.description}</Description>
         <ButtonContainer>
-          <AiOutlineEdit size={24} color="#ccc" onClick={this.props.onEdit} />
-          <AiOutlineDelete size={24} color="#ccc" onClick={this.props.onDelete} />
+          <AiOutlineEdit size={24} color="#ccc" onClick={props.onEdit} />
+          <AiOutlineDelete size={24} color="#ccc" onClick={props.onDelete}/>
         </ButtonContainer>
       </PostCardContainer>
     );
   }
-}
 
 export default PostCard;
+

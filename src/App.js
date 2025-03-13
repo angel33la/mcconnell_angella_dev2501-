@@ -6,54 +6,56 @@ import PostCard from './components/PostCard.js';
 import Form from './components/Form.js';
 // images
 import Logo from './images/logo.png';
-import AvatarSrc from './images/avatar.png';
+import AvatarSrc from './images/icons8-fortune-teller-48.png';
+import MyAvatar from './components/MyAvatar.js';
 
 
 class App extends Component {
   render() {
-    /* const logo = '../images/logo.png';
-    const searchPlaceholder = 'Search';
-    const avatarSrc = '../images/avatar.png';
-    const adImage1 = 'https://via.placeholder.com/300x150';
-    const adTitle1 = 'Ad Title 1';
-    const adSubtitle1 = 'Ad Subtitle 1';
-    const adImage2 = 'https://via.placeholder.com/300x150';
-    const adTitle2 = 'Ad Title 2';
-    const adSubtitle2 = 'Ad Subtitle 2';
-    const postAvatar = 'https://via.placeholder.com/40x40';
-    const postTitle = 'Post Title';
-    const postDescription = 'Post Description';
-
-    const handleEdit = () => {
-      console.log('Edit button clicked');
-    };
-
-    const handleDelete = () => {
-      console.log('Delete button clicked');
-    };
-
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      console.log('Form submitted');
-    }; */
-
     return (
       <div>
-        <Header logo={Logo} searchPlaceholder="Search" avatarSrc={AvatarSrc} />
-        <main>
-          <Navigation />
-          <div>
-            <Form title="Post Title" description="Post Description" />
-            <PostCard/>
+        <Header pgTitle='MingoBook' searchPlaceholder="Search" />
+        <div style={styles.container}>
+          <Navigation style={styles.navigation} />
+          <div style={styles.main}>
+            <Form />
           </div>
-            <aside style={{ padding: '20px' }}>
-              <AdCard  title="Ad Title 1" subtitle="Ad Subtitle 1" />
-              <AdCard  title="Ad Title 2" subtitle="Ad Subtitle 1" /> 
+          <aside style={styles.aside}>
+            Advertisers
+              <AdCard  title="Ad Title 1" subtitle="Ad Subtitle 1" adsContent="Ad Content 1"/>
+              <AdCard  title="Ad Title 2" subtitle="Ad Subtitle 2" adsContent="Ad Content 2"/>
+              <AdCard  title="Ad Title 3" subtitle="Ad Subtitle 3" adsContent="Ad Content 3"/>  
             </aside>
-          </main>
+        </div>
+        <PostCard />
       </div>
     );
   }
 }
 
 export default App;
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    height: '100vh',
+    backgroundColor: '#f0f0f0',
+  },
+  navigation: {
+    display: 'flex',
+  },
+  main: {
+    display: 'flex',
+    flex: 2,
+  },
+  aside: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    background: '#f0f0f0',
+    paddingLeft: 20,
+    paddingRight: 20,
+    color: '#00bbf9ff',
+  },
+};
