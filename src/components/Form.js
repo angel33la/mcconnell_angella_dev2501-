@@ -1,33 +1,41 @@
 import React from 'react';
-import styled from 'styled-components';
 import Button from '../components/buttons/Button.js';
+import MyIcons from '../components/MyIcons.js';
+import ImageUrl2 from '../images/icons8-fortune-teller-48.png';
 
-const FormContainer = styled.form`
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-`;
-
-const Input = styled.input`
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-`;
-
-class Form extends React.Component {
-render() {
+const Form = (props) => {
     return (
-        <FormContainer onSubmit={this.props.onSubmit}>
-        <Input type="text" placeholder="Post Title" value={this.props.title} />
-        <Input type="text" placeholder="Post Description" value={this.props.description} />
-        <Button type="submit">Submit</Button>
-        </FormContainer>
+        <form style={styles.Form} onSubmit={props.addName}>
+            <MyIcons IconImg={ImageUrl2} ImageAlt="Woman Profile"/>
+            <div style={styles.inputContainer}>
+                <input style={styles.input} type="text" placeholder="What's is on your mind" name="name" />
+                <input style={styles.input} type="text" placeholder="Post" name="email" />
+            </div>
+            <Button btnText="Submit" />
+        </form>
     );
-    }
 }
 
 export default Form;
+
+const styles = {
+    Form: {
+        display: 'flex',
+        flexDirection: 'column',
+        padding: '25px',
+        border: '1px solid #ccc',
+        borderRadius: '5px',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+    },
+    inputContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        marginBottom: '20px',
+    },
+    input: {
+        padding: '10px',
+        marginRight: '10px',
+        border: '1px solid #ccc',
+        borderRadius: '5px',
+    }
+};

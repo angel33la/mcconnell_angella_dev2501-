@@ -1,57 +1,53 @@
 import React from 'react';
-import styled from 'styled-components';
-import { AiOutlineEdit } from 'react-icons/ai';
-import { AiOutlineDelete } from 'react-icons/ai';
+// images
+import Picture from '../images/pixeltrue-yoga.svg';
 
-const PostCardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-`;
 
-const Avatar = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ccc;
-  margin-right: 20px;
-`;
-
-const Title = styled.h2`
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-`;
-
-const Description = styled.p`
-  padding: 10px;
-  font-size: 14px;
-  color: #666;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-`;
-
-class PostCard extends React.Component {
-  render() {
+const PostCard = (props) =>{
     return (
-      <PostCardContainer>
-        <Avatar src={this.props.avatar} />
-        <Title>{this.props.title}</Title>
-        <Description>{this.props.description}</Description>
-        <ButtonContainer>
-          <AiOutlineEdit size={24} color="#ccc" onClick={this.props.onEdit} />
-          <AiOutlineDelete size={24} color="#ccc" onClick={this.props.onDelete} />
-        </ButtonContainer>
-      </PostCardContainer>
+      <article style={styles.myArticle}>
+        <img src={Picture} alt="Dog Playing"/>
+        <h2 style={styles.h2}>Cats Are Awesome</h2>
+        <p style={styles.p}>Cats are the best! I love them!</p>
+        <div style={styles.buttons}>
+          <span type="submit" style={styles.button}>Like</span>
+          <span type="submit" style={styles.button}>Comment</span>
+        </div>
+      </article>
     );
   }
-}
 
 export default PostCard;
+
+const styles = {
+    myArticle: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        margin: '20px',
+        padding: '20px',
+        border: '2px solid #00f5d4ff',
+        borderRadius: '5px',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+    },
+    buttons: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginTop: '20px',
+    },
+    button: {
+        padding: '10px',
+        borderRadius: '5px',
+        backgroundColor: '#00bbf9ff',
+        color: '#000',
+        border: '1px solid #fee440ff',
+        cursor: 'pointer',
+    },
+    h2: {
+        color: '#f15bb5ff',
+    },
+    p: {
+        color: '#9b5de5ff',
+    }
+};
+

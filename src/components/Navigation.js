@@ -1,25 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const NavigationContainer = styled.nav `
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  background-color: #333;
+  background-color: #00bbf9ff;
+  padding: 5rem;
   color: #fff;
 `;
 
-const LinkContainer = styled(Link)
-`
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  color: #fff;
+const LinkContainer = styled.button`
+  padding: 60px;
+  border-bottom: 1px solid #9b5de5ff;
+  color: #9b5de5ff;
+  background-color: #fff;
   text-decoration: none;
 `;
 
-class Navigation extends React.Component {
-    render() {
+const Navigation = () => {
         return ( 
         <NavigationContainer> 
             <LinkContainer to = "#"> Newsfeed </LinkContainer> 
@@ -28,6 +26,5 @@ class Navigation extends React.Component {
         </NavigationContainer>
         );
     }
-}
 
 export default Navigation;

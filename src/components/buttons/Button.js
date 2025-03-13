@@ -12,14 +12,12 @@ const ButtonContainer = styled.button`
   border-radius: 3px;
 `;
 
-class Button extends React.Component {
-render() {
+const Button = (props) => {
     return (
-        <ButtonContainer $primary onClick={this.props.onClick}>
-        {this.props.children}
+        <ButtonContainer $primary onClick={props.onClick}>
+        {props.children}
     </ButtonContainer>
     );
-    }
 }
 
 export default Button;
