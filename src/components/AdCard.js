@@ -34,8 +34,8 @@ const AdCard = (props) => {
     return (
         <AdCardContainer>
             <Image src={props.image} />
-        <Title>{props.title}</Title>
-        <Subtitle>{props.subtitle}</Subtitle>
+            <Title>{props.title}</Title>
+            <Subtitle>{props.subtitle}</Subtitle>
         </AdCardContainer>
     );
 }

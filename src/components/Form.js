@@ -11,7 +11,7 @@ const Form = (props) => {
                 <input style={styles.input} type="text" placeholder="What's is on your mind" name="name" />
                 <input style={styles.input} type="text" placeholder="Post" name="email" />
             </div>
-            <Button btnText="Submit" />
+            <Button children="Submit" />
         </form>
     );
 }
@@ -26,6 +26,7 @@ const styles = {
         border: '1px solid #ccc',
         borderRadius: '5px',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+        width: '350px',
     },
     inputContainer: {
         display: 'flex',

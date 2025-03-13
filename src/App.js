@@ -6,7 +6,6 @@ import PostCard from './components/PostCard.js';
 import Form from './components/Form.js';
 // images
 
-
 class App extends Component {
   render() {
     return (
@@ -16,6 +15,7 @@ class App extends Component {
           <Navigation style={styles.navigation} />
           <div style={styles.main}>
             <Form />
+            <PostCard />
           </div>
           <aside style={styles.aside}>
             Advertisers
@@ -24,10 +24,6 @@ class App extends Component {
               <AdCard  title="Ad Title 3" subtitle="Ad Subtitle 3" adsContent="Ad Content 3"/>  
             </aside>
         </div>
-        <div>
-        <PostCard />
-        </div>
-        
       </div>
     );
   }
@@ -39,7 +35,9 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-between',
     height: '100vh',
+    // width: '100%',
     backgroundColor: '#f0f0f0',
   },
   navigation: {
@@ -47,7 +45,8 @@ const styles = {
   },
   main: {
     display: 'flex',
-    flex: 2,
+    flexDirection: 'column',
+    // flex: 2,
   },
   aside: {
     display: 'flex',
