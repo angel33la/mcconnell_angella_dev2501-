@@ -5,9 +5,6 @@ import AdCard from './components/AdCard.js';
 import PostCard from './components/PostCard.js';
 import Form from './components/Form.js';
 // images
-import Logo from './images/logo.png';
-import AvatarSrc from './images/icons8-fortune-teller-48.png';
-import MyAvatar from './components/MyAvatar.js';
 
 
 class App extends Component {

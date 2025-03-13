@@ -1,44 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
 // images
-import Logo from '../images/favicon1.png';
+import ImageUrl from '../images/favicon1.png';
+import MyIcons from './MyIcons';
 // components
-import { CiSearch, CiSettings } from 'react-icons/ci';
-import SearchButton from './SearchButton.js';
-
-
-const HeaderContainer = styled.header `
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-`;
-
-
-
-const SearchContainer = styled.div `
-    display: flex;
-    align-items: center;
-    padding: .55rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-`;
+import { FaSearch, FaEnvelope, FaBell } from 'react-icons/fa';
 
 
 const Header = (props) => {
         return ( 
-        <HeaderContainer>
-            <img src={Logo} alt="bird" style={styles.Logo} placeholder="flamingo" />
-            <h1>mingoBook</h1>
-            <SearchContainer>
-                <CiSearch size={24} color="#ccc" />
-                <SearchButton type="text" placeholder="Search" value={props.CiSearch} />
-            </SearchContainer>
-            <CiSettings size={24} color="#000" value={props.btnText}/>
-                </HeaderContainer>
+        <Header style={styles.HeaderContainer}>
+            <div style={styles.left}>
+                <div style={styles.logo}></div>
+                <h1>mingoBook</h1>
+            </div>
+            <div style={styles.searchCont}>
+                <span style={styles.inputIcon}><FaSearch/></span>
+                <input type="text" placeholder="Search" style={styles.inputWithIcon}/></div>
+            <div style={styles.right}>
+                <button style={styles.rightIcons}><FaEnvelope/></button>
+                <button style={styles.rightIcons}><FaBell/></button>
+                <MyIcons IconImg={ImageUrl} ImageAlt="Woman Profile"/>
+            </div>
+            </Header>
         );
     }
 
@@ -46,22 +29,62 @@ const Header = (props) => {
 export default Header;
 
 const styles = {
-    myAvatar: {
-        width: '40px',
-        height: '40px',
-        borderRadius: '50%',
-        marginRight: '20px',
+    HeaderContainer: {
+        // margin: '1%',
+            padding: '1%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            backgroundColor: '#fff',
+            borderBottom: '1px solid #ccc',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            color:'#f15bb5ff',
     },
-    CiSearch: {
-        width: '40px',
-        height: '40px',
-        borderRadius: '50%',
-        marginRight: '20px',
+    left: {
+        display: 'flex',
+        flexDirection: 'row',
+        // width: '100%',
+        // margin: '10px',
     },
-    CiSettings: {
-        width: '40px',
-        height: '40px',
+    logo: {
+        width: '50px',
+        height: '60px',
         borderRadius: '50%',
-        marginRight: '20px',
-    },  
-};
+        objectFit: 'cover',
+        marginRight: '10px',
+        backgroundColor: 'white',
+        alignItems: 'center',
+    },
+    searchCont: {
+        border: '1px solid #ddd',
+        display: 'flex',
+        flexDirection: 'row',
+        borderRadius:'2px',
+        width: '40%'
+    },
+    rightIcons: {
+        marginRight: '10px',
+        fontSize: '1.5rem',
+        color: '#00bbf9ff',
+        cursor: 'pointer',
+    },
+    inputWithIcon: {
+        border: 'none',
+        flex: '1',
+        padding: '10px',
+    },
+    inputIcon: {
+        padding: '10px',
+        background: '#ddd',
+        display: 'flex',
+        alignItems: 'center',
+        fontSize: '1.5rem',
+    },
+    right: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',        
+        // margin: '10px',          
+    },
+}
+
