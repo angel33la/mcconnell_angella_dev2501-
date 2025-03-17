@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from '../components/buttons/Button.js';
 import MyIcons from '../components/MyIcons.js';
-import ImageUrl2 from '../images/icons8-fortune-teller-48.png';
+import IconUrl2 from '../images/icons8-fortune-teller-48.png';
 
 const Form = (props) => {
     return (
         <form style={styles.Form} onSubmit={props.addItem}>
-            <MyIcons IconImg={ImageUrl2} ImageAlt="Woman Profile"/>
+            <MyIcons IconImg={IconUrl2} ImageAlt="Woman Profile"/>
             <div style={styles.inputContainer}>
                 <input style={styles.input} onChange={props.getInput} type="text" value={props.image} placeholder="Image URL" name="image" />
                 <input style={styles.input} onChange={props.getInput} type="text" value={props.title} placeholder="Title" name="title" />

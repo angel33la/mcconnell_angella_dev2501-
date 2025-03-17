@@ -5,9 +5,9 @@ import AdCard from './components/AdCard.js';
 import PostCard from './components/PostCard.js';
 import Form from './components/Form.js';
 // images
-// import ImageUrl from './images/womanSmiling.png';
-// import ImageUrl2 from './images/open-doodles-dog-jumping.png'
-// import ImageUrl3 from './images/pixeltrue-yoga.svg';
+import ImageUrl from './images/vecteezy_cute-animal-on-nature-ai-image_26992352.jpg';
+import ImageUrl2 from './images/vecteezy_cute-animal-on-nature-ai-image_26993651.jpg'
+import ImageUrl3 from './images/vecteezy_cute-animal-on-nature-ai-image_26992429.jpg';
 
 
 class App extends Component {
@@ -16,45 +16,35 @@ class App extends Component {
     post: [{
       title: 'Sample Title',
       description: 'Sample Description',
-      image: 'https://via.placeholder.com/150'
+      image: ImageUrl
     },
   {
       title: 'Sample Title',
       description: 'Sample Description',
-      image: 'https://via.placeholder.com/150'
+      image: ImageUrl2
     },
   {
       title: 'Sample Title',
       description: 'Sample Description',
-      image: 'https://via.placeholder.com/150'
+      image: ImageUrl3
     }]
   }
   // create function for input values
   getInput = e => {
-    this.setState({ title: e.target.value, description: e.target.value, image: e.target.value });
+    this.setState({post: e.target.value});
   }
   addItem = e => {
     e.preventDefault();
-    this.setState({ post: [...this.state.post, { title: this.state.title, description: this.state.description, image: this.state.image }] });
+    this.setState({ 
+      post: [...this.state.post, { title: this.state.title}] });
     // Reset the form
-    this.setState({ title: '', description: '', image: '' })
-
-  }
-  // Handle form submission
-  handleSubmit = e => {
-    e.preventDefault();
-    this.addItem(e);
-  }
-  // Handle button click
-  handleButtonClick = e => {
-    e.preventDefault();
-    this.addItem(e);
-  }
+    e.target.reset();
+}
   render() {
   // map through the post array and create a Form component for each post
-  let post = this.state.post.map((element, i) => {
-    return <Form key={i} val={element} handleButtonClick={this.handleButtonClick} />
-  // return <PostCard key={index} val={element} handleButtonClick={this.handleButtonClick} />
+  let myPost = this.state.post.map((element, i) => {
+    return <Form key={i} val={element} />
+  // return <PostCard key={index} val={element} />
   }) 
     return (
       <div>
@@ -64,12 +54,13 @@ class App extends Component {
             <main style={styles.main}>
               <div style={styles.form}>
                 <Form 
-                  title={this.state.title} 
-                  description={this.state.description}
-                  image={this.state.image} 
-                  addItem={this.handleSubmit} 
+                  getInput={this.getInput} 
+                  addItem={this.addItem} 
                   Button="Submit"
                 />
+              </div>
+              <div style={styles.post}>
+                {myPost}
               </div>
                 <aside style={styles.aside}>
                 Advertisers
