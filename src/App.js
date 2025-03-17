@@ -58,8 +58,9 @@ class App extends Component {
   render() {
   // map through the post array and create a Form component for each post
   let post = this.state.post.map((element, i) => {
-  return <PostCard key={index} val={element} handleButtonClick={this.handleButtonClick} />
+    return <PostCard key={i} val={element} />
   }) 
+
     return (
       <div>
         <Header pgTitle='MingoBook' searchPlaceholder="Search" />
