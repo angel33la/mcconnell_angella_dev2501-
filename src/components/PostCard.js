@@ -34,20 +34,8 @@ const styles = {
         borderRadius: '5px',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
     },
-    buttons: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        padding: '2%',
-        marginTop: '20px',
-    },
-    button: {
-        padding: '10px',
-        borderRadius: '5px',
-        backgroundColor: '#00bbf9ff',
-        color: '#000',
-        border: '1px solid #fee440ff',
-        cursor: 'pointer',
-    },
+  
+    
     h2: {
         color: '#f15bb5ff',
     },
