@@ -52,14 +52,15 @@ class App extends Component {
           <div style={styles.container}>
             <Navigation style={styles.navigation} />
             <main style={styles.main}>
+            <div>
+                  <PostCard />
+                </div>
               <div style={styles.form}>
                 <Form 
                   getInput={this.getInput} 
                   addItem={this.addItem} 
                   Button="Submit"
                 />
-              </div>
-              <div style={styles.post}>
                 {myPost}
               </div>
                 <aside style={styles.aside}>
@@ -68,9 +69,6 @@ class App extends Component {
                   <AdCard  title="Ad Title 2" subtitle="Ad Subtitle 2" adsContent="Ad Content 2"/>
                   <AdCard  title="Ad Title 3" subtitle="Ad Subtitle 3" adsContent="Ad Content 3"/>  
                 </aside>
-                <div>
-                  <PostCard />
-                </div>
             </main>
           </div>
         </div>
@@ -92,11 +90,11 @@ const styles = {
   },
   main: {
     display: 'flex',
-    flex: 2,
   },
   aside: {
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'space-around',
     alignItems: 'center',
     background: '#f0f0f0',
     paddingLeft: 20,

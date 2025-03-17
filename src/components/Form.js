@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../components/buttons/Button.js';
 import MyIcons from '../components/MyIcons.js';
-import IconUrl2 from '../images/icons8-fortune-teller-48.png';
+import IconUrl2 from '../images/icons8-eminem-96.png';
 
 const Form = (props) => {
     return (
@@ -22,19 +22,20 @@ export default Form;
 const styles = {
     Form: {
         display: 'flex',
-        flexDirection: 'column',
-        width: '40%',
-        padding: '2%',
+        flexDirection: 'column,',
+        alignItems: 'center',
+        padding: '20px',
         backgroundColor: 'whitesmoke',
         color: '#333',
-        border: '1px solid #ccc',
+        border: '1px solid #00f5d4ff',
         borderRadius: '5px',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
     },
     inputContainer: {
         display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
+        flexDirection: 'column',
+        width: '100%',
+        justifyContent: 'space-between',
         marginBottom: '20px',
     },
     input: {

@@ -1,16 +1,17 @@
 import React from 'react';
 // images
-//import Picture from '../images/pixeltrue-yoga.svg';
+import image from '../images/icons8-fortune-teller-48.png';
 // components
 import Button from '../components/buttons/Button.js';
+
 
 
 const PostCard = (props) =>{
     return (
       <article style={styles.myArticle}>
-        <img src={props.val.image} alt={props.val.imageAlt}/>
-        <h1>{props.val.title}</h1>
-        <p>{props.val.description}</p>
+        <img src={image} alt="Woman Profile"/>
+        <h1>My Post</h1>
+        <p>Having a wonderful day! Discovering React is a game-changer.</p>
         <div style={styles.buttons}>
           <Button btnText="Edit"/>
           <Button btnText="Delete"/>
@@ -27,7 +28,8 @@ const styles = {
         flexDirection: 'column',
         alignItems: 'center',
         margin: '20px',
-        padding: '20px',
+        padding: '40px',
+        width: '600px',
         border: '2px solid #00f5d4ff',
         borderRadius: '5px',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
@@ -35,6 +37,7 @@ const styles = {
     buttons: {
         display: 'flex',
         justifyContent: 'space-between',
+        padding: '2%',
         marginTop: '20px',
     },
     button: {
