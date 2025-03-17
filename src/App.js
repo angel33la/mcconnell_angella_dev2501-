@@ -5,31 +5,45 @@ import AdCard from './components/AdCard.js';
 import PostCard from './components/PostCard.js';
 import Form from './components/Form.js';
 // images
+// import ImageUrl from './images/womanSmiling.png';
+// import ImageUrl2 from './images/open-doodles-dog-jumping.png'
+// import ImageUrl3 from './images/pixeltrue-yoga.svg';
 
 
 class App extends Component {
   state = {
-    title: '',
-    description: '',
-    image: ''
+    // create an array to hold posts
+    post: [{
+      title: 'Sample Title',
+      description: 'Sample Description',
+      image: 'https://via.placeholder.com/150'
+    },
+  {
+      title: 'Sample Title',
+      description: 'Sample Description',
+      image: 'https://via.placeholder.com/150'
+    },
+  {
+      title: 'Sample Title',
+      description: 'Sample Description',
+      image: 'https://via.placeholder.com/150'
+    }]
+  }
+  // create function for input values
+  getInput = e => {
+    this.setState({ title: e.target.value, description: e.target.value, image: e.target.value });
   }
   addItem = e => {
     e.preventDefault();
-    console.log(this.state.title, this.state.description, this.state.image);
+    this.setState({ post: [...this.state.post, { title: this.state.title, description: this.state.description, image: this.state.image }] });
     // Reset the form
-    this.setState({ title: '', description: '', image: '' });
-  }
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value});
+    this.setState({ title: '', description: '', image: '' })
+
   }
   // Handle form submission
   handleSubmit = e => {
     e.preventDefault();
     this.addItem(e);
-  }
-  // Handle input changes
-  handleInputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
   }
   // Handle button click
   handleButtonClick = e => {
@@ -37,6 +51,11 @@ class App extends Component {
     this.addItem(e);
   }
   render() {
+  // map through the post array and create a Form component for each post
+  let post = this.state.post.map((element, i) => {
+    return <Form key={i} val={element} handleButtonClick={this.handleButtonClick} />
+  // return <PostCard key={index} val={element} handleButtonClick={this.handleButtonClick} />
+  }) 
     return (
       <div>
         <Header pgTitle='MingoBook' searchPlaceholder="Search" />
@@ -49,8 +68,7 @@ class App extends Component {
                   description={this.state.description}
                   image={this.state.image} 
                   addItem={this.handleSubmit} 
-                  handleChange={this.handleInputChange} 
-                  handleButtonClick={this.handleButtonClick}
+                  Button="Submit"
                 />
               </div>
                 <aside style={styles.aside}>

@@ -8,11 +8,11 @@ const Form = (props) => {
         <form style={styles.Form} onSubmit={props.addItem}>
             <MyIcons IconImg={ImageUrl2} ImageAlt="Woman Profile"/>
             <div style={styles.inputContainer}>
-                <input style={styles.input} type="text" value={props.title} placeholder="Title" name="title" />
-                <input style={styles.input} type="text" value={props.description} placeholder="Description" name="description" />
-                <input style={styles.input} type="text" value={props.image} placeholder="Image URL" name="image" />
+                <input style={styles.input} onChange={props.getInput} type="text" value={props.image} placeholder="Image URL" name="image" />
+                <input style={styles.input} onChange={props.getInput} type="text" value={props.title} placeholder="Title" name="title" />
+                <input style={styles.input} onChange={props.getInput} type="text" value={props.description} placeholder="Description" name="description" />
             </div>
-            <Button btnText="Submit" />
+            <Button {...props} />
         </form>
     );
 }
