@@ -15,8 +15,8 @@ const ButtonContainer = styled.button`
 const Button = (props) => {
     return (
         <ButtonContainer $primary onClick={props.onClick}>
-        {props.children}
-    </ButtonContainer>
+          {props.children}
+        </ButtonContainer>
     );
 }
 

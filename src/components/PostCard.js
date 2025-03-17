@@ -1,17 +1,19 @@
 import React from 'react';
 // images
-import Picture from '../images/pixeltrue-yoga.svg';
+//import Picture from '../images/pixeltrue-yoga.svg';
+// components
+import Button from '../components/buttons/Button.js';
 
 
 const PostCard = (props) =>{
     return (
       <article style={styles.myArticle}>
-        <img src={Picture} alt="Dog Playing"/>
-        <h2 style={styles.h2}>Cats Are Awesome</h2>
-        <p style={styles.p}>Cats are the best! I love them!</p>
+        <img src={props.val.image} alt={props.val.imageAlt}/>
+        <h1>{props.val.title}</h1>
+        <p>{props.val.description}</p>
         <div style={styles.buttons}>
-          <span type="submit" style={styles.button}>Like</span>
-          <span type="submit" style={styles.button}>Comment</span>
+          <Button btnText="Edit"/>
+          <Button btnText="Delete"/>
         </div>
       </article>
     );
