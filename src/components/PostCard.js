@@ -4,7 +4,6 @@ import React from 'react';
 // components
 import Button from '../components/buttons/Button.js';
 
-
 const PostCard = (props) =>{
     return (
       <article style={styles.myArticle}>

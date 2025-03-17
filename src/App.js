@@ -11,6 +11,7 @@ import Form from './components/Form.js';
 
 
 class App extends Component {
+  // 1. Delcare the state object
   state = {
     // create an array to hold posts
     post: [{
@@ -29,40 +30,43 @@ class App extends Component {
       image: 'https://via.placeholder.com/150'
     }]
   }
+
+//2. Create your lifeclcle methods - componentDidMount, componentDidUpdate, componentWillUnmount
+
+  
+// 3. Create your custom functions
+
+  // 4. Get input values
   // create function for input values
   getInput = e => {
     this.setState({ title: e.target.value, description: e.target.value, image: e.target.value });
   }
+  // 5.Create Method - CRUD
   addItem = e => {
+    console.log('Add Item');
     e.preventDefault();
     this.setState({ post: [...this.state.post, { title: this.state.title, description: this.state.description, image: this.state.image }] });
     // Reset the form
     this.setState({ title: '', description: '', image: '' })
 
   }
-  // Handle form submission
-  handleSubmit = e => {
-    e.preventDefault();
-    this.addItem(e);
-  }
-  // Handle button click
-  handleButtonClick = e => {
-    e.preventDefault();
-    this.addItem(e);
-  }
+
+  // 6. Delete Method - CRUD
+
+//7. Update Method - CRUD
+
   render() {
   // map through the post array and create a Form component for each post
   let post = this.state.post.map((element, i) => {
-    return <Form key={i} val={element} handleButtonClick={this.handleButtonClick} />
-  // return <PostCard key={index} val={element} handleButtonClick={this.handleButtonClick} />
+  return <PostCard key={index} val={element} handleButtonClick={this.handleButtonClick} />
   }) 
     return (
       <div>
         <Header pgTitle='MingoBook' searchPlaceholder="Search" />
-          <div style={styles.container}>
+          <main style={styles.container}>
             <Navigation style={styles.navigation} />
-            <main style={styles.main}>
-              <div style={styles.form}>
+            {/* <main style={styles.main}> */}
+              <div style={styles.middle}>
                 <Form 
                   title={this.state.title} 
                   description={this.state.description}
@@ -70,19 +74,16 @@ class App extends Component {
                   addItem={this.handleSubmit} 
                   Button="Submit"
                 />
+                card here - {post}
               </div>
-                <aside style={styles.aside}>
+              <aside style={styles.aside}>
                 Advertisers
                   <AdCard  title="Ad Title 1" subtitle="Ad Subtitle 1" adsContent="Ad Content 1"/>
                   <AdCard  title="Ad Title 2" subtitle="Ad Subtitle 2" adsContent="Ad Content 2"/>
                   <AdCard  title="Ad Title 3" subtitle="Ad Subtitle 3" adsContent="Ad Content 3"/>  
-                </aside>
-                <div>
-                  <PostCard />
-                </div>
+              </aside>
             </main>
-          </div>
-        </div>
+      </div>
     );
   }
 }
@@ -102,6 +103,10 @@ const styles = {
   main: {
     display: 'flex',
     flex: 2,
+  },
+  middle: {
+    display: 'flex',
+    flexDirection: 'column',
   },
   aside: {
     display: 'flex',
