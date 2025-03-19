@@ -6,12 +6,12 @@ import Button from '../components/buttons/Button.js';
 
 
 
-const PostCard = (props) =>{
+const PostCard = props =>{
     return (
       <article style={styles.myArticle}>
-        <img src={image} alt="Woman Profile"/>
-        <h1>My Post</h1>
-        <p>Having a wonderful day! Discovering React is a game-changer.</p>
+        <img src={image} alt={"fortune teller"}/>
+        <h1>{props.val.title}</h1>
+        <p>{props.val.description}</p>
         <div style={styles.buttons}>
           <Button btnText="Edit"/>
           <Button btnText="Delete"/>
@@ -26,13 +26,15 @@ const styles = {
     myArticle: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        margin: '20px',
-        padding: '40px',
-        width: '600px',
+        flexWrap:'flex-wrap',
+        width: '250px',
+        padding: '1%'
+        /* alignItems: 'center',
+        justifyContent: 'space-between',
+        margin: '0 20px',
         border: '2px solid #00f5d4ff',
         borderRadius: '5px',
-        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', */
     },
   
     

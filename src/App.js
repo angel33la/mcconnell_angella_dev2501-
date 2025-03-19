@@ -13,25 +13,28 @@ import ImageUrl3 from './images/vecteezy_cute-animal-on-nature-ai-image_26992429
 class App extends Component {
   state = {
     // create an array to hold posts
-    post: [{
+  post: [{
       title: 'Sample Title',
       description: 'Sample Description',
-      image: ImageUrl
+      image: ImageUrl,
+      imageAlt: 'Woman Profile'
     },
   {
       title: 'Sample Title',
       description: 'Sample Description',
-      image: ImageUrl2
+      image: ImageUrl2,
+      imageAlt: 'Man Profile'
     },
   {
       title: 'Sample Title',
       description: 'Sample Description',
-      image: ImageUrl3
+      image: ImageUrl3,
+      imageAlt: 'Woman Profile'
     }]
   }
   // create function for input values
   getInput = e => {
-    this.setState({post: e.target.value});
+    this.setState({title: e.target.value});
   }
   addItem = e => {
     e.preventDefault();
@@ -42,36 +45,34 @@ class App extends Component {
 }
   render() {
   // map through the post array and create a Form component for each post
-  let myPost = this.state.post.map((element, i) => {
+  let thePost = this.state.post.map((element, i) => {
     return <Form key={i} val={element} />
-  // return <PostCard key={index} val={element} />
+  //return <PostCard key={i} val={element} />
   }) 
     return (
-      <div>
+      <div style={styles.container}>
         <Header pgTitle='MingoBook' searchPlaceholder="Search" />
-          <div style={styles.container}>
+          <main style={styles.main}>
             <Navigation style={styles.navigation} />
-            <main style={styles.main}>
-            <div>
-                  <PostCard />
-                </div>
-              <div style={styles.form}>
+            <PostCard/>
+            <div style={styles.form}>
                 <Form 
                   getInput={this.getInput} 
                   addItem={this.addItem} 
-                  Button="Submit"
+                  Button="Post"
                 />
-                {myPost}
-              </div>
-                <aside style={styles.aside}>
+            </div>
+                <div style={styles.post}>
+                  {thePost}
+                </div>
+              <aside style={styles.aside}>
                 Advertisers
                   <AdCard  title="Ad Title 1" subtitle="Ad Subtitle 1" adsContent="Ad Content 1"/>
                   <AdCard  title="Ad Title 2" subtitle="Ad Subtitle 2" adsContent="Ad Content 2"/>
                   <AdCard  title="Ad Title 3" subtitle="Ad Subtitle 3" adsContent="Ad Content 3"/>  
                 </aside>
             </main>
-          </div>
-        </div>
+            </div>
     );
   }
 }
@@ -80,19 +81,32 @@ export default App;
 
 const styles = {
   container: {
-    display: 'flex',
-    flexDirection: 'row',
-    height: '100vh',
+   /*  display: 'flex',
+    flexDirection: 'column', */
     backgroundColor: '#f0f0f0',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
   navigation: {
     display: 'flex',
   },
   main: {
     display: 'flex',
+    flex: 2,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    background: '#f0f0f0',
+    paddingLeft: 20,
+    paddingRight: 20,
+    color: '#00bbf9ff',
   },
   aside: {
     display: 'flex',
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
