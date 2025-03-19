@@ -4,6 +4,7 @@ import Navigation from './components/Navigation.js';
 import AdCard from './components/AdCard.js';
 import PostCard from './components/PostCard.js';
 import Form from './components/Form.js';
+//import Button from './components/buttons/Button.js';
 // images
 import ImageUrl from './images/vecteezy_cute-animal-on-nature-ai-image_26992352.jpg';
 import ImageUrl2 from './images/vecteezy_cute-animal-on-nature-ai-image_26993651.jpg'
@@ -14,22 +15,24 @@ class App extends Component {
   state = {
     // create an array to hold posts
   post: [{
-      title: 'Sample Title',
-      description: 'Sample Description',
       image: ImageUrl,
-      imageAlt: 'Woman Profile'
+      imageAlt: 'Woman Profile',
+      title: 'Sample Title',
+      description: 'Sample Description'
     },
   {
-      title: 'Sample Title',
-      description: 'Sample Description',
       image: ImageUrl2,
-      imageAlt: 'Man Profile'
+      imageAlt: 'Man Profile',  
+      title: 'Sample Title',
+      description: 'Sample Description'
+      
     },
   {
-      title: 'Sample Title',
-      description: 'Sample Description',
       image: ImageUrl3,
-      imageAlt: 'Woman Profile'
+      imageAlt: 'Woman Profile',
+      title: 'Sample Title',
+      description: 'Sample Description'
+      
     }]
   }
   // create function for input values
@@ -43,17 +46,31 @@ class App extends Component {
     // Reset the form
     e.target.reset();
 }
+// delete function
+ deleteItem = key => {
+  const newPost = [...this.state.post];
+  newPost.splice(key, 1);
+  this.setState(() => ({
+    post: newPost
+  })); 
+  /* removeItem=(key) =>{
+    const newPost = this.state.post.filter(posts => posts.key !== key);
+    this.setState({posts: newPost});
+  }; */
+}
   render() {
   // map through the post array and create a Form component for each post
   let thePost = this.state.post.map((element, i) => {
-    return <Form key={i} val={element} />
-  //return <PostCard key={i} val={element} />
+    //add delete button
+    return <Form key={i} val={element}
+    deleteItem={() => this.deleteItem(i)} 
+    /> 
   }) 
     return (
       <div style={styles.container}>
         <Header pgTitle='MingoBook' searchPlaceholder="Search" />
           <main style={styles.main}>
-            <Navigation style={styles.navigation} />
+          <Navigation style={styles.navigation} />
             <PostCard/>
             <div style={styles.form}>
                 <Form 
@@ -81,38 +98,46 @@ export default App;
 
 const styles = {
   container: {
-   /*  display: 'flex',
-    flexDirection: 'column', */
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
     backgroundColor: '#f0f0f0',
   },
   form: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
+    minHeight: '400px',
+    width: '400px',
+    margin: '10px',
+    border: '2px solid #00bbf9ff',
   },
-  navigation: {
-    display: 'flex',
-  },
+  /* navigation: {
+    width: '200px',
+    background: '#f0f0f0',
+    paddingLeft: 20,
+    paddingRight: 20,
+    color: '#00bbf9ff',  
+  },*/
   main: {
-    display: 'flex',
-    flex: 2,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+   /*  display: 'flex',
+    flexDirection:'row',
+    justifyContent: 'space-around', */
     background: '#f0f0f0',
     paddingLeft: 20,
     paddingRight: 20,
     color: '#00bbf9ff',
   },
   aside: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    background: '#f0f0f0',
-    paddingLeft: 20,
-    paddingRight: 20,
-    color: '#00bbf9ff',
+    minHeight: '400px',
+    width: '300px',
+    margin: '10px',
+    padding: '5px',
+    paddingBottom: '60px',
+    border: '2px solid #00bbf9ff',
   },
+  post: {
+    minHeight: '100px',
+    width: '50px',
+    margin: '10px',
+    border: '2px solid #00bbf9ff',
+  }
 };

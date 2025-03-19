@@ -3,7 +3,7 @@ import React from 'react';
 const Button = props => {
     return (
         <button type="submit" style={styles.Button}>
-            {props.btnText}
+            {props.Button}
         </button>
     );
 }
@@ -14,7 +14,7 @@ const styles = {
         backgroundColor: '#00bbf9ff',
         color: 'white',
         border: 'none',
-        padding: '10px 20px',
+        padding: '8px 8px',
         borderRadius: '5px',
         cursor: 'pointer',
         fontSize: '1.5rem',
