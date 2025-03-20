@@ -5,22 +5,24 @@ import image from '../images/icons8-fortune-teller-48.png';
 import Button from '../components/buttons/Button.js';
 
 
-
 const PostCard = props =>{
     return (
-      <article style={styles.myArticle}>
-        <img src={image} alt={"fortune teller"}/>
-        <h2>'Title'</h2>
-        <p>'Description'</p>
-        <div style={styles.buttons}>
-          <Button btnText="Edit"/> 
-          <Button btnText="Delete" onClick={props.deleteItem}/>
-        </div>
-      </article>
-    );
-  }
+<article style={styles.myArticle}>
+    <img src={image} alt={"fortune teller"}/>
+    <h2 style={styles.h2}>'Title'</h2>
+    <p style={styles.p}>'Description'</p>
+    <div style={styles.buttons}>
+        <Button btnText="Edit"/>
+        <Button btnText="Delete" onClick={props.deleteItem}/>
+    </div>
+</article>
+)
+}
 
 export default PostCard;
+
+
+
 
 const styles = {
     myArticle: {
@@ -28,7 +30,7 @@ const styles = {
         flexDirection: 'column',
         //flexWrap:'flex-wrap',
         alignItems: 'center',
-        //justifyContent: 'center',
+        justifyContent: 'center',
         width: '50%',
         minHeight: '200px',
         backgroundColor: 'whitesmoke',
@@ -52,4 +54,5 @@ const styles = {
         color: 'black',
     }
 };
+
 
