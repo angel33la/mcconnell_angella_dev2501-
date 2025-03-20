@@ -23,7 +23,8 @@ const styles = {
     Form: {
         display: 'flex',
         flexDirection: 'column',
-        width: '40%',
+        // Added this to expand the width of the form.
+        width: '350px',
         padding: '2%',
         backgroundColor: 'whitesmoke',
         color: '#333',

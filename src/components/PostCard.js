@@ -7,12 +7,17 @@ import Button from '../components/buttons/Button.js';
 const PostCard = (props) =>{
     return (
       <article style={styles.myArticle}>
-        <img src={props.val.image} alt={props.val.imageAlt}/>
+        {/* <img src={props.val.image} alt={props.val.imageAlt}/> */}
         <h1>{props.val.title}</h1>
         <p>{props.val.description}</p>
         <div style={styles.buttons}>
-          <Button btnText="Edit"/>
-          <Button btnText="Delete"/>
+        
+          {/* Your button prop is called children. Check your button component. 
+              Add the onClick function name. 
+              This must match the function name on the parent.
+          */}
+          <Button children="Edit" />
+          <Button children="Delete" />
         </div>
       </article>
     );

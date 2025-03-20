@@ -17,17 +17,17 @@ class App extends Component {
     post: [{
       title: 'Sample Title',
       description: 'Sample Description',
-      image: 'https://via.placeholder.com/150'
+      // image: 'https://via.placeholder.com/150'
     },
   {
       title: 'Sample Title',
       description: 'Sample Description',
-      image: 'https://via.placeholder.com/150'
+      // image: 'https://via.placeholder.com/150'
     },
   {
       title: 'Sample Title',
       description: 'Sample Description',
-      image: 'https://via.placeholder.com/150'
+      // image: 'https://via.placeholder.com/150'
     }]
   }
 
@@ -40,6 +40,8 @@ class App extends Component {
   // create function for input values
   getInput = e => {
     this.setState({ title: e.target.value, description: e.target.value, image: e.target.value });
+    // this.setState({[e.target.name]: e.target.value});
+    // console.log(this.state.title, this.state.description, this.state.image);
   }
   // 5.Create Method - CRUD
   addItem = e => {
@@ -47,13 +49,15 @@ class App extends Component {
     e.preventDefault();
     this.setState({ post: [...this.state.post, { title: this.state.title, description: this.state.description, image: this.state.image }] });
     // Reset the form
-    this.setState({ title: '', description: '', image: '' })
+    // this.setState({ title: '', description: '', image: '' })
+    e.target.reset()
 
   }
 
-  // 6. Delete Method - CRUD
+  // 6. Delete Method - CRUD - USE THE FILTER METHOD FOR THIS. MDN has a good example.
 
-//7. Update Method - CRUD
+
+  //7. Update Method - CRUD
 
   render() {
   // map through the post array and create a Form component for each post
@@ -69,13 +73,19 @@ class App extends Component {
             {/* <main style={styles.main}> */}
               <div style={styles.middle}>
                 <Form 
-                  title={this.state.title} 
-                  description={this.state.description}
-                  image={this.state.image} 
-                  addItem={this.handleSubmit} 
-                  Button="Submit"
+                  // These are not needed.  Match the input with the function name.
+                  // title={this.state.title} 
+                  // description={this.state.description}
+                  // image={this.state.image}
+                  getInput={this.getInput}
+                  // This needs to match what is on the form and the function. 
+                  // addItem={this.handleSubmit} 
+                  addItem={this.addItem}
+                  // This should be the prop from the button. Look to see what you called it.
+                  // Button="Submit"
+                  children="Submit"
                 />
-                card here - {post}
+                {post}
               </div>
               <aside style={styles.aside}>
                 Advertisers
@@ -95,19 +105,18 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'row',
-    height: '100vh',
-    backgroundColor: '#f0f0f0',
+    // Added this to push the nav left and the ads right
+    justifyContent: 'space-between',
+    height: '100%',
+    backgroundColor: '#f0f0f0'
   },
   navigation: {
     display: 'flex',
   },
-  main: {
-    display: 'flex',
-    flex: 2,
-  },
   middle: {
     display: 'flex',
     flexDirection: 'column',
+    padding: '2%'
   },
   aside: {
     display: 'flex',
