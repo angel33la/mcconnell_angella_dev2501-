@@ -1,58 +1,58 @@
 import React from 'react';
 // images
-import image from '../images/icons8-fortune-teller-48.png';
+//import Picture from '../images/pixeltrue-yoga.svg';
 // components
 import Button from '../components/buttons/Button.js';
 
-
-const PostCard = props =>{
+const PostCard = (props) =>{
     return (
-<article style={styles.myArticle}>
-    <img src={image} alt={"fortune teller"}/>
-    <h2 style={styles.h2}>'Title'</h2>
-    <p style={styles.p}>'Description'</p>
-    <div style={styles.buttons}>
-        <Button btnText="Edit"/>
-        <Button btnText="Delete" onClick={props.deleteItem}/>
-    </div>
-</article>
-)
-}
+      <article style={styles.myArticle}>
+        {/* <img src={props.val.image} alt={props.val.imageAlt}/> */}
+        <h1>{props.val.title}</h1>
+        <p>{props.val.description}</p>
+        <div style={styles.buttons}>
+        
+          {/* Your button prop is called children. Check your button component. 
+              Add the onClick function name. 
+              This must match the function name on the parent.
+          */}
+          <Button children="Edit" />
+          <Button children="Delete" />
+        </div>
+      </article>
+    );
+  }
 
 export default PostCard;
-
-
-
 
 const styles = {
     myArticle: {
         display: 'flex',
         flexDirection: 'column',
-        //flexWrap:'flex-wrap',
         alignItems: 'center',
-        justifyContent: 'center',
-        width: '50%',
-        minHeight: '200px',
-        backgroundColor: 'whitesmoke',
+        margin: '20px',
         padding: '20px',
-        margin: 'auto',
         border: '2px solid #00f5d4ff',
         borderRadius: '5px',
-        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', 
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
     },
-  
-    
+    buttons: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginTop: '20px',
+    },
+    button: {
+        padding: '10px',
+        borderRadius: '5px',
+        backgroundColor: '#00bbf9ff',
+        color: '#000',
+        border: '1px solid #fee440ff',
+        cursor: 'pointer',
+    },
     h2: {
         color: '#f15bb5ff',
     },
     p: {
         color: '#9b5de5ff',
-    },
-    btnText: {
-        fontSize: '1.5rem',
-        fontWeight: 'bold',
-        color: 'black',
     }
 };
-
-
