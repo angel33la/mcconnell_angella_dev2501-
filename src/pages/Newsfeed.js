@@ -115,7 +115,6 @@ editable = () => {
                 />
                 {post}
         </section>
-               
     );
 }
 }

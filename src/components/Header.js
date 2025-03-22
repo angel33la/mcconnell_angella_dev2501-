@@ -4,7 +4,7 @@ import ImageUrl from '../images/icons8-female-profile-96.png';
 import ImageUrl2 from '../images/favicon1.png';
 import MyIcons from './MyIcons';
 // components
-import { FaSearch, FaEnvelope, FaBell } from 'react-icons/fa';
+import { FaSearch, FaBell } from 'react-icons/fa';
 
 
 const Header = (props) => {
@@ -20,9 +20,9 @@ const Header = (props) => {
                 <span style={styles.inputIcon}><FaSearch/></span>
                 <input type="text" placeholder="Search" style={styles.inputWithIcon}/></div>
             <div style={styles.right}>
-                <button style={styles.rightIcons}><FaEnvelope/></button>
                 <button style={styles.rightIcons}><FaBell/></button>
                 <MyIcons IconImg={ImageUrl} ImageAlt="Woman Profile"/>
+                <h2 style={styles.right}>Suzie Q.</h2>
             </div>
             </header>
         );
@@ -70,6 +70,8 @@ const styles = {
         fontSize: '1.5rem',
         color: '#00bbf9ff',
         cursor: 'pointer',
+        border: 'none',
+        backgroundColor: 'transparent',
     },
     inputWithIcon: {
         border: 'none',
@@ -87,7 +89,8 @@ const styles = {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',        
-        // margin: '10px',          
-    },
+        margin: '10px', 
+        color: '#00bbf9ff',         
+    }
 }
 

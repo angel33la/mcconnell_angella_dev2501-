@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+// components
+import { FaVideo, FaEnvelope, FaAddressCard, FaNewspaper } from 'react-icons/fa';
+
 
 const NavigationContainer = styled.nav `
   display: flex;
@@ -25,11 +28,24 @@ const LinkContainer = styled.button`
 const Navigation = () => {
         return ( 
         <NavigationContainer> 
-            <LinkContainer to = "#"> Newsfeed </LinkContainer> 
-            <LinkContainer to = "#"> Messages </LinkContainer> 
-            <LinkContainer to = "#"> Watch </LinkContainer> 
+            <LinkContainer to = "./src/pages/Dashboard.js"> <button style={styles.rightIcons}><FaAddressCard/></button>Dashboard </LinkContainer>
+            <LinkContainer to = "./src/pages/Newsfeed.js"> <button style={styles.rightIcons}><FaNewspaper/></button>Newsfeed </LinkContainer> 
+            <LinkContainer to = "./src/pages/Messages.js"> <button style={styles.rightIcons}><FaEnvelope/></button>
+            Messages </LinkContainer> 
+            <LinkContainer to = "./src/pages/Notification.js"> <button style={styles.rightIcons}><FaVideo/></button>Watch </LinkContainer> 
         </NavigationContainer>
         );
     }
 
 export default Navigation;
+
+const styles = {
+    rightIcons: {
+      marginRight: '10px',
+      fontSize: '1.5rem',
+      color:'#f15bb5ff',
+      cursor: 'pointer',
+      border: 'none',
+      backgroundColor: 'transparent',
+    }
+}
