@@ -8,7 +8,11 @@ const Form = (props) => {
         <form style={styles.Form} onSubmit={props.addItem}>
             <MyIcons IconImg={ImageUrl2} ImageAlt="Woman Profile"/>
             <div style={styles.inputContainer}>
-                {/* <input style={styles.input} onChange={props.getInput} type="text" value={props.image} placeholder="Image URL" name="image" /> */}
+            {/* <img src={props.val.image} style={{
+                width: props.val.imageSize,
+                height: props.val.imageSize
+        }} alt={props.val.imageAlt}/> */}
+               {/*  <input style={styles.input} onChange={props.getInput} type="text" value={props.image} placeholder="Image URL" name="image" /> */}
                 <input style={styles.input} onChange={props.getInput} type="text" value={props.title} placeholder="Title" name="title" />
                 <input style={styles.input} onChange={props.getInput} type="text" value={props.description} placeholder="Description" name="description" />
             </div>
@@ -24,7 +28,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         // Added this to expand the width of the form.
-        width: '350px',
+        width: '500px',
         padding: '2%',
         backgroundColor: 'whitesmoke',
         color: '#333',

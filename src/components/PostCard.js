@@ -6,8 +6,11 @@ import Button from '../components/buttons/Button.js';
 
 const PostCard = (props) =>{
     return (
-      <article style={styles.myArticle}>
-        {/* <img src={props.val.image} alt={props.val.imageAlt}/> */}
+      <article key={props.val.id} style={styles.myArticle} editable>
+        <img src={props.val.image} style={{
+          width: props.val.imageSize,
+          height: props.val.imageSize
+        }} alt={props.val.imageAlt}/>
         <h1>{props.val.title}</h1>
         <p>{props.val.description}</p>
         <div style={styles.buttons}>
@@ -16,8 +19,8 @@ const PostCard = (props) =>{
               Add the onClick function name. 
               This must match the function name on the parent.
           */}
-          <Button children="Edit" />
-          <Button children="Delete" />
+          <Button children="Edit" onClick={props.editable}/>
+          <Button children="Delete" onClick={props.deleteItem}/>
         </div>
       </article>
     );
@@ -30,6 +33,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        width: '450px',
         margin: '20px',
         padding: '20px',
         border: '2px solid #00f5d4ff',
