@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+//Add Router
+import { Link } from "react-router";
+import { NavLink } from "react-router";
 // components
 import { FaVideo, FaEnvelope, FaAddressCard, FaNewspaper } from 'react-icons/fa';
 
@@ -28,8 +31,11 @@ const LinkContainer = styled.button`
 const Navigation = () => {
         return ( 
         <NavigationContainer> 
-            <LinkContainer to = "./src/pages/Dashboard.js"> <button style={styles.rightIcons}><FaAddressCard/></button>Dashboard </LinkContainer>
-            <LinkContainer to = "./src/pages/Newsfeed.js"> <button style={styles.rightIcons}><FaNewspaper/></button>Newsfeed </LinkContainer> 
+            {/* Links to component */}
+            <Link to="/Dashboard"><span style={styles.rightIcons}><FaAddressCard/></span>Dashboard</Link>
+            <NavLink to="/Newsfeed"><span style={styles.rightIcons}><FaAddressCard/></span>Newsfeed</NavLink>
+            <LinkContainer to="/Dashboard"> <span style={styles.rightIcons}><FaAddressCard/></span>Dashboard </LinkContainer>
+            <LinkContainer to = "/Newsfeed"> <span style={styles.rightIcons}><FaNewspaper/></span>Newsfeed </LinkContainer> 
             <LinkContainer to = "./src/pages/Messages.js"> <button style={styles.rightIcons}><FaEnvelope/></button>
             Messages </LinkContainer> 
             <LinkContainer to = "./src/pages/Notification.js"> <button style={styles.rightIcons}><FaVideo/></button>Watch </LinkContainer> 

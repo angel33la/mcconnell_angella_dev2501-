@@ -37,24 +37,21 @@ state = {
     color: 'pink',
 }
 
+//2. Create your lifecycle methods - componentDidMount, componentDidUpdate, componentWillUnmount
 //mounting the component
 componentDidMount() {
-console.log('componentDidMount() lifecycle');
-setTimeout(() => {
-    this.setState({ color: 'pink' });
-}, 5000);
-}
-
-//2. Create your lifecycle methods - componentDidMount, componentDidUpdate, componentWillUnmount
-
-
+    console.log('componentDidMount() lifecycle');
+    setTimeout(() => {
+        this.setState({ color: 'black' });
+    }, 5000);
+    }
+    
 // 3. Create your custom functions
-
-  // 4. Get input values
-  // create function for input values
+// 4. Get input values
+// create function for input values
 getInput = e => {
-    this.setState({ title: e.target.value, description: e.target.value, image: e.target.value });
-    // this.setState({[e.target.name]: e.target.value});
+    // this.setState({ title: e.target.value, description: e.target.value, image: e.target.value });
+    this.setState({[e.target.name]: e.target.value});
     // console.log(this.state.title, this.state.description, this.state.image);
 }
   // 5.Create Method - CRUD
@@ -77,17 +74,17 @@ deleteItem = element => {
     });
 }
   // edit item function
-editable = () => {
-    const [content, setContent] = React.useState("")
+// editable = () => {
+//     const [content, setContent] = React.useState("")
 
-    const onContentChange = React.useCallback(evt => {
-    const sanitizeConf = {
-        allowedTags: ["b", "i", "a", "p"],
-        allowedAttributes: { a: ["href"] }
-};
+//     const onContentChange = React.useCallback(evt => {
+//     const sanitizeConf = {
+//         allowedTags: ["b", "i", "a", "p"],
+//         allowedAttributes: { a: ["href"] }
+// };
 
-    setContent(sanitizeHtml(evt.currentTarget.innerHTML, sanitizeConf))
-    }, [])
+//     setContent(sanitizeHtml(evt.currentTarget.innerHTML, sanitizeConf))
+//     }, [])
 
     return (
     <ContentEditable
