@@ -53,8 +53,8 @@ setTimeout(() => {
   // 4. Get input values
   // create function for input values
 getInput = e => {
-    this.setState({ title: e.target.value, description: e.target.value, image: e.target.value });
-    // this.setState({[e.target.name]: e.target.value});
+   // this.setState({ title: e.target.value, description: e.target.value, image: e.target.value });
+    this.setState({[e.target.name]: e.target.value});
     // console.log(this.state.title, this.state.description, this.state.image);
 }
   // 5.Create Method - CRUD
@@ -77,25 +77,9 @@ deleteItem = element => {
     });
 }
   // edit item function
-editable = () => {
-    const [content, setContent] = React.useState("")
 
-    const onContentChange = React.useCallback(evt => {
-    const sanitizeConf = {
-        allowedTags: ["b", "i", "a", "p"],
-        allowedAttributes: { a: ["href"] }
-};
 
-    setContent(sanitizeHtml(evt.currentTarget.innerHTML, sanitizeConf))
-    }, [])
 
-    return (
-    <ContentEditable
-        onChange={onContentChange}
-        onBlur={onContentChange}
-        html={content} />
-    )
-}
 
   //7. Update Method - CRUD
 
@@ -112,7 +96,7 @@ editable = () => {
                     getInput={this.getInput}
                     addItem={this.addItem}
                     children="Submit"
-                />
+            />
                 {post}
         </section>
     );
