@@ -64,8 +64,9 @@ function Dashboard() {
             display: 'flex',
             flexDirection: 'column',
             height: '100vh',
-            width: '99vh',
-            paddingLeft: '2%'
+            width: '600px',
+            paddingLeft: '2%',
+            fontSize: '1.5rem',
         },
         row: {
             display: 'flex',

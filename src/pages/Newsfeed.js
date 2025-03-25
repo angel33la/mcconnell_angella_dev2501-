@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PostCard from '../components/PostCard.js';
 import Form from '../components/Form.js';
-import sanitizeHtml from "sanitize-html"
-import ContentEditable from 'react-contenteditable';
+//import sanitizeHtml from "sanitize-html"
+//import ContentEditable from 'react-contenteditable';
 // images
 import ImageUrl from '../images/vecteezy_cute-animal-on-nature-ai-image_26992352.jpg';
 import ImageUrl2 from '../images/vecteezy_cute-animal-on-nature-ai-image_26992429.jpg';
