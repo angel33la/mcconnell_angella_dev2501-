@@ -1,4 +1,7 @@
 //Parent/Smart Hooks Component: Settings.js
+import { useState, useEffect } from 'react';
+import SettingsForm from '../components/form/SettingsForm.js';
+
 function Settings() {
     return (
         <section style={styles.container}>
