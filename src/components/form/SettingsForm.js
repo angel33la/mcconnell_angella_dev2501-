@@ -1,50 +1,47 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../buttons/Button";
+import MyIcons from "../MyIcons";
+import ImageUrl from "../../images/icons8-female-profile-96.png";
+
+
+
+
 
 const Container = styled.section`
   display: flex;
   flex-direction: row;
   background-color: whitesmoke;
   justify-content: center;
-  align-items: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid #ccc;
-  padding: 20px;
-  height: 100vh;
-  width: 99vh;
+  padding: 2px;
+  height: 400px;
+  min-width: 800px;
+    border: 1px solid #ccc;
+    borderRadius: 5px;
+    backgroundColor: whitesmoke;
+    color: #333;
+    width: 100%;
+    fontSize: 1.5rem;
 `;
 
-const ProfileHeader = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
 
-const Avatar = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-`;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width:400px;
   padding: 1%;
   background-color: whitesmoke;
   color: #333;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 const InputRow = styled.p`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: space-around;
+  margin-bottom: 10px;
 `;
 
 const Input = styled.input`
@@ -55,23 +52,28 @@ const Input = styled.input`
   border-radius: 5px;
 `;
 
-const StyledButton = styled(Button)`
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #00bbf9ff;
-  color: #000;
-  border: 1px solid #fee440ff;
-  cursor: pointer;
-`;
+const styles = {
+    button: {
+        padding: '10px 20px',
+        marginTop: '1px',
+        borderRadius: '5px',
+        backgroundColor: ' #f15bb5ff',
+        color: '#000',
+        border: 'none',
+        cursor: 'pointer',
+    },
+    img: {
+        width: "50px",
+        height: "50px",
+        borderRadius: "50%",
+        objectFit: "cover",
+    },
+};
 
 const SettingsForm = (props) => {
   return (
     <Container>
-      <ProfileHeader>
-        <Avatar src={props.avatar} alt="avatar" />
-        <h4>{props.username}</h4>
-        <StyledButton onClick={props.onClick}>Edit Profile</StyledButton>
-      </ProfileHeader>
+      <MyIcons IconImg={ImageUrl} ImageAlt="Woman Profile" style={styles.img} />
 
       <Form onSubmit={props.editMe}>
         <InputRow>
@@ -138,9 +140,13 @@ const SettingsForm = (props) => {
             readOnly
           />
         </InputRow>
+        <Button style={styles.button} onClick={props.onClick}>
+          Edit Profile
+        </Button>
       </Form>
     </Container>
   );
 };
 
 export default SettingsForm;
+

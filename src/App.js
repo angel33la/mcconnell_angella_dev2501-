@@ -12,6 +12,7 @@ import Dashboard from './pages/Dashboard.js';
 import AdImage from './images/bombayComm.jpg';
 import AdImage2 from './images/glassesComm.jpg';
 import AdImage3 from './images/iceCreamComm.jpg';
+import Profile from './pages/Profile.js';
 
 //parent component
 function App() {
@@ -30,6 +31,7 @@ function App() {
                   <Route path="/Messages" element={<Messages />} />
                   <Route path="/Notification" element={<Notification />} />
                   <Route path="/Settings" element={<Settings />} />
+                  <Route path="/Profile" element={<Profile />} />
                 </Routes>
                 </section>
               <aside style={styles.aside}>
