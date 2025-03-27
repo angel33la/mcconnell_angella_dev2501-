@@ -1,5 +1,5 @@
 {
-  "name": "mcconnell_angella_dev2501",
+  "name": "mingobook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,10 +11,10 @@
     "react": "^18.2.0",
     "react-contenteditable": "^3.3.7",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0",
+    "react-icons": "^4.12.0",
     "react-router": "^7.4.0",
     "react-router-dom": "^6.22.3",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "5.0.1",
     "recharts": "^2.15.1",
     "sanitize-html": "^2.15.0",
     "styled-components": "^6.1.14",
