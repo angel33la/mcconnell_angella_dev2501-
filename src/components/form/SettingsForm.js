@@ -9,15 +9,15 @@ import ImageUrl from "../../images/icons8-female-profile-96.png";
 
 
 const Container = styled.section`
-  display: flex;
-  flex-direction: row;
-  background-color: whitesmoke;
-  justify-content: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  border: 1px solid #ccc;
-  padding: 2px;
-  height: 400px;
-  min-width: 800px;
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+    justify-content: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    padding: 2px;
+    height: 400px;
+    min-width: 800px;
     border: 1px solid #ccc;
     borderRadius: 5px;
     backgroundColor: whitesmoke;
@@ -29,27 +29,27 @@ const Container = styled.section`
 
 
 const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  width:400px;
-  padding: 1%;
-  background-color: whitesmoke;
-  color: #333;
+    display: flex;
+    flex-direction: column;
+    width:400px;
+    padding: 1%;
+    background-color: whitesmoke;
+    color: #333;
 `;
 
 const InputRow = styled.p`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px;
 `;
 
 const Input = styled.input`
-  padding: 1%;
-  margin: 1%;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    padding: 1%;
+    margin: 1%;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 `;
 
 const styles = {
@@ -71,81 +71,79 @@ const styles = {
 };
 
 const SettingsForm = (props) => {
-  return (
+    return (
     <Container>
-      <MyIcons IconImg={ImageUrl} ImageAlt="Woman Profile" style={styles.img} />
+        <MyIcons IconImg={ImageUrl} ImageAlt="Woman Profile" style={styles.img} />
 
-      <Form onSubmit={props.editMe}>
+    <Form onSubmit={props.editMe}>
         <InputRow>
-          <Input
+        <Input
             type="text"
             name="fname"
             value={props.fname}
             placeholder="First Name"
-            readOnly
-          />
-          <Input
+            readOnly/>
+        <Input
             type="text"
             name="lname"
             value={props.lname}
             placeholder="Last Name"
-            readOnly
-          />
+            readOnly/>
         </InputRow>
         <InputRow>
-          <Input
+            <Input
             type="text"
             name="street"
             value={props.street}
             placeholder="Street"
             readOnly
-          />
-          <Input
+            />
+            <Input
             type="text"
             name="city"
             value={props.city}
             placeholder="City"
             readOnly
-          />
+            />
         </InputRow>
         <InputRow>
-          <Input
+            <Input
             type="text"
             name="state"
             value={props.state}
             placeholder="State"
             readOnly
-          />
-          <Input
+            />
+            <Input
             type="text"
             name="zip"
             value={props.zip}
             placeholder="Zip"
             readOnly
-          />
+            />
         </InputRow>
         <InputRow>
-          <Input
+            <Input
             type="email"
             name="email"
             value={props.email}
             placeholder="Email"
             readOnly
-          />
-          <Input
+            />
+            <Input
             type="phone"
             name="phone"
             value={props.phone}
             placeholder="Phone"
             readOnly
-          />
+            />
         </InputRow>
-        <Button style={styles.button} onClick={props.onClick}>
-          Edit Profile
-        </Button>
-      </Form>
-    </Container>
-  );
+            <Button style={styles.button} onClick={props.onClick}>
+            Edit Profile
+            </Button>
+    </Form>
+</Container>
+);
 };
 
 export default SettingsForm;
