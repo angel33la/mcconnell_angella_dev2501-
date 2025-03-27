@@ -1,31 +1,47 @@
 import React from 'react';
+import { Link } from "react-router";
 
 // images
 import ImageUrl from '../images/icons8-female-profile-96.png';
 import ImageUrl2 from '../images/favicon1.png';
 import MyIcons from './MyIcons';
 // components
-import { FaSearch, FaBell } from 'react-icons/fa';
+import { FaSearch, FaBell, FaSlidersH, FaUserCircle } from "react-icons/fa";
 
 
 const Header = (props) => {
-        return ( 
-        <header style={styles.myHeader}>
+        return (
+          <header style={styles.myHeader}>
             <div style={styles.left}>
-                <div style={styles.logo}>
-                <MyIcons IconImg={ImageUrl2} ImageAlt="Woman Profile"/>
-                </div>
-                <h1>mingoBook</h1>
+              <div style={styles.logo}>
+                <MyIcons IconImg={ImageUrl2} ImageAlt="Woman Profile" />
+              </div>
+              <h1>mingoBook</h1>
             </div>
             <div style={styles.searchCont}>
-                <span style={styles.inputIcon}><FaSearch/></span>
-                <input type="text" placeholder="Search" style={styles.inputWithIcon}/></div>
-            <div style={styles.right}>
-                <button style={styles.rightIcons}><FaBell/></button>
-                <MyIcons IconImg={ImageUrl} ImageAlt="Woman Profile"/>
-                <h2 style={styles.right}>Suzie Q.</h2>
+              <span style={styles.inputIcon}>
+                <FaSearch />
+              </span>
+              <input
+                type="text"
+                placeholder="Search"
+                style={styles.inputWithIcon}
+              />
             </div>
-            </header>
+            <div style={styles.right}>
+              <Link to="/Notification" style={styles.rightIcons}>
+                <FaBell />
+              </Link>
+              <Link to="/Settings" style={styles.rightIcons}>
+                <FaSlidersH />
+              </Link>
+              <Link to="/Profile" style={styles.rightIcons}>
+                <FaUserCircle />
+              </Link>
+              <MyIcons IconImg={ImageUrl} ImageAlt="Woman Profile" />
+              <h2 style={styles.right}>Suzie Q.</h2>
+            </div>
+          </header>
         );
     }
 
