@@ -7,6 +7,9 @@ It has been hard to understand really if I am getting anywhere or not. Just when
 # Start changes on week three
 There is so much I have learned and yet it seems the simple things I am having the most difficulty. My styling all around has got me frustrated beyond the point where I had to walk away. I surely hope to make some improvements this week going into my last week. 
 
+# Week four - final work
+I have so much more to do on my app. But I am going to keep on doing my assignments and making this app look professional as I can make it. I really do believe that it is looking very good and the colors are nice. I have also implemented a light and dark theme. Hoping that turns out nice.
+
 
 # Getting Started with Create React App
 
