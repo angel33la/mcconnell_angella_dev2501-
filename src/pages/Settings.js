@@ -12,7 +12,7 @@ const darkTheme = {
 };
 
 const styles = {
-container: {
+  container: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -21,14 +21,14 @@ container: {
     height: "100vh",
     width: "100%",
     fontSize: "1.5rem",
-},
-button: {
+  },
+  button: {
     padding: "10px 20px",
     marginTop: "1px",
-    border: "none",
+    border: "1px solid #9b5de5ff",
     borderRadius: "5px",
     cursor: "pointer",
-},
+  },
 };
 
 function Settings() {
@@ -36,7 +36,7 @@ const [theme, setTheme] = useState("light");
 
 useEffect(() => {
     console.log(`Theme changed to: ${theme}`);
-}, [theme]);
+});
 
 const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
@@ -45,24 +45,24 @@ const toggleTheme = () => {
 const currentTheme = theme === "light" ? lightTheme : darkTheme;
 
     return (
-        <section style={{ ...styles.container, ...currentTheme }}>
-    <div>
-    <h1>Settings</h1>
-    <p>Current Theme: {theme}</p>
-    <button
-        style={{...styles.button,
-        backgroundColor: theme === "Light" ? "#000" : "whitesmoke",
-        color: theme === "Light" ? "whitesmoke" : "#000",
-        }}
-        onClick={toggleTheme}>
-        Toggle Theme
-    </button>
-      {/* Render the SettingsForm component */}
-    <SettingsForm />
-    </div>
-
-</section>
-);
+      <section style={{ ...styles.container, ...currentTheme }}>
+        <div>
+          <h1>Current Theme Background: {theme}</h1>
+          <button
+            style={{
+              ...styles.button,
+              backgroundColor: theme === "Light" ? "#000" : "whitesmoke",
+              color: theme === "Light" ? "whitesmoke" : "#000",
+            }}
+            onClick={toggleTheme}
+          >
+            Toggle Theme Background
+          </button>
+          {/* Render the SettingsForm component */}
+          <SettingsForm />
+        </div>
+      </section>
+    );
 }
 
 export default Settings;

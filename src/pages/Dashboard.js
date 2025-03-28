@@ -60,24 +60,22 @@ function Dashboard() {
     export default Dashboard;
 
     const styles = {
-        container: {
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100vh',
-            width: '600px',
-            paddingLeft: '2%',
-            fontSize: '1.5rem',
+container: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "2%",
+        fontSize: "1.5rem",
+},
+row: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        padding: "2%",
+        backgroundColor: "whitesmoke",
+        color: "#333",
+        border: "1px solid #ccc",
         },
-        row: {
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            height: '100vh',
-            width: '100%',
-            alignItems: 'center',
-            padding: '2%',
-            backgroundColor: 'whitesmoke',
-            color: '#333',
-            border: '1px solid #ccc',
-        },
-    }
+    };
