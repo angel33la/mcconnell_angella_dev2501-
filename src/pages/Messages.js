@@ -1,106 +1,75 @@
-//Parent/Smart Hooks Component: Messages.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-function Messages() {
-  const [conversations, setConversations] = useState([]);
-  const [selectedConversation, setSelectedConversation] = useState(null);
-  const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
-
-  useEffect(() => {
-    // Fetch conversations from API
-    const fetchConversations = async () => {
-      // Replace with actual API call
-      const data = [
-        { id: 1, user: 'User A', lastMessage: 'Hello!' },
-        { id: 2, user: 'User B', lastMessage: 'How are you?' },
-      ];
-      setConversations(data);
-    };
-
-    fetchConversations();
-  }, []);
+const Messages = () => {
+  const location = useLocation();
+  const [messages] = useState([]);
+  const [conversations] = useState([
+      { id: 1, user: "Billy Bob", lastMessage: "Hello!" },
+      { id: 2, user: "Patty Jane", lastMessage: "How are you?" },
+    ]);
+  const [newMessage, setNewMessage] = useState("");
+  // Removed unused notifications state
 
   useEffect(() => {
-    // Fetch messages for selected conversation
-    const fetchMessages = async () => {
-      if (selectedConversation) {
-        // Replace with actual API call
-        const data = [
-          { id: 1, sender: 'User A', content: 'Hello!' },
-          { id: 2, sender: 'You', content: 'Hi there!' },
-        ];
-        setMessages(data);
-      }
-    };
+    // Parse query parameters when the component mounts
+    // Removed unused queryParams variable
 
-    fetchMessages();
-  }, [selectedConversation]);
+    // Removed unused parsedNotifications variable
+    // const parsedMessages = JSON.parse(queryParams.get("messages") || "[]");
+
+    // Removed setNotifications as notifications state is no longer used
+  }, [location.search]); // Re-run the effect if the location changes
 
   const handleConversationClick = (conversation) => {
-    setSelectedConversation(conversation);
+    console.log("Conversation clicked:", conversation);
+    // Add logic to handle conversation click, e.g., load messages for the conversation
   };
 
-  const handleSendMessage = async (e) => {
+  const handleSendMessage = (e) => {
     e.preventDefault();
-    if (newMessage.trim() !== '') {
-      // Replace with actual API call to send message
-      const newMessageData = {
-        id: messages.length + 1,
-        sender: 'You',
-        content: newMessage,
-      };
-      setMessages([...messages, newMessageData]);
-      setNewMessage('');
+    if (newMessage.trim()) {
+      console.log("Message sent:", newMessage);
+      setNewMessage("");
     }
   };
 
   return (
-    <div className="messages-container">
-      <div className="conversations-list">
+    <div className="messages-page">
+      <h1>Messages Page</h1>
+
+      <h2>Conversations</h2>
+      <ul>
         {conversations.map((conversation) => (
-          <div
+          <li
             key={conversation.id}
-            className="conversation-item"
             onClick={() => handleConversationClick(conversation)}
           >
-            {conversation.user}
-            <p>{conversation.lastMessage}</p>
-          </div>
+            {conversation.user}: {conversation.lastMessage}
+          </li>
         ))}
-      </div>
-      <div className="selected-conversation">
-        {selectedConversation ? (
-          <>
-            <h2>{selectedConversation.user}</h2>
-            <div className="messages-list">
-              {messages.map((message) => (
-                <div
-                  key={message.id}
-                  className={`message-item ${
-                    message.sender === 'You' ? 'sent' : 'received'
-                  }`}
-                >
-                  {message.content}
-                </div>
-              ))}
-            </div>
-            <form onSubmit={handleSendMessage}>
-              <input
-                type="text"
-                value={newMessage}
-                onChange={(e) => setNewMessage(e.target.value)}
-                placeholder="Type a message..."
-              />
-              <button type="submit">Send</button>
-            </form>
-          </>
-        ) : (
-          <p>Select a conversation to view messages.</p>
-        )}
+      </ul>
+
+      <div className="messages">
+        <h2>Messages</h2>
+        <ul>
+          {messages.map((message) => (
+            <li key={message.id}>
+              {message.sender}: {message.content}
+            </li>
+          ))}
+        </ul>
+        <form onSubmit={handleSendMessage}>
+          <input
+            type="text"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+          />
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
   );
-}
+};
 
-export default Messages;
+export default React.memo(Messages);
