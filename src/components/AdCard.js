@@ -4,7 +4,9 @@ import styled from 'styled-components';
 const AdCardContainer = styled.div`
     display: flex;
     flex-direction: column;
+    width: 200px;
     padding: 20px;
+    margin: 20px;
     border: 1px solid #fee440ff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -34,8 +36,8 @@ const AdCard = (props) => {
     return (
         <AdCardContainer>
             <Image src={props.image} />
-        <Title>{props.title}</Title>
-        <Subtitle>{props.subtitle}</Subtitle>
+            <Title>{props.title}</Title>
+            <Subtitle>{props.subtitle}</Subtitle>
         </AdCardContainer>
     );
 }

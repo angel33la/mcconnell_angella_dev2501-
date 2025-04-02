@@ -15,7 +15,7 @@ const ChartMedium = ({chartMedium}) => {
     return (
       <article key={chartMedium.id} style={styles.card}>
         <h1 style={styles.h1}>{chartMedium.chartHeader}</h1>
-        <LineChart width={600} height={50} data={data}>
+        <LineChart width={250} height={50} data={data}>
           <Line
             type="monotone"
             dataKey="pv"
@@ -35,8 +35,8 @@ const styles = {
     transition: "0.3s",
     width: "100%",
     margin: "2%",
-    paddingLeft: "1%",
-    paddingRight: "1%",
+    padding: "5%",
+    // paddingRight: "1%",
     borderRadius: "5px",
     backgroundColor: "whitesmoke",
     color: "#333",

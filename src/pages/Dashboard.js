@@ -28,14 +28,14 @@ function Dashboard() {
 ])
         return (
             <section style={styles.container}>
-                    <h1>Dashboard</h1>
+                <h1>Dashboard</h1>
                 <p style={styles.chartHorz}>
-                {chartHorz.map((chartHorz, id) => (
-                    <ChartHorz key={id}
-                    id={id}
-                    chartHorz={chartHorz}
-                    />
-                ))}
+                    {chartHorz.map((chartHorz, id) => (
+                        <ChartHorz key={id}
+                        id={id}
+                        chartHorz={chartHorz}
+                        />
+                    ))}
                 </p>
                 <p style={styles.row}>
                 {chartSmall.map((chartSmall, id) => (
@@ -63,19 +63,19 @@ function Dashboard() {
 container: {
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
+        // justifyContent: "center",
+        // alignItems: "center",
         padding: "2%",
-        fontSize: "1.5rem",
+        // fontSize: "1.5rem",
 },
 row: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        padding: "2%",
-        backgroundColor: "whitesmoke",
-        color: "#333",
-        border: "1px solid #ccc",
+        // justifyContent: "space-evenly",
+        // alignItems: "center",
+        // padding: "2%",
+        // backgroundColor: "whitesmoke",
+        // color: "#333",
+        // border: "1px solid #ccc",
         },
     };

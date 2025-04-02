@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router";
 import Header from "./components/Header.js";
 import Navigation from "./components/Navigation.js";
 import AdCard from "./components/AdCard.js";
@@ -26,20 +26,18 @@ function App() {
     <div>
       <Header pgTitle="MingoBook" searchPlaceholder="Search" />
       <main style={styles.container}>
-        <Navigation style={styles.navigation} />
+        <Navigation />
         {/* <main style={styles.main}> */}
         <section style={styles.middle}>
-          <Router>
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/Dashboard" element={<Dashboard />} />
-              <Route path="/Newsfeed" element={<Newsfeed />} />
-              <Route path="/Messages" element={<Messages />} />
-              <Route path="/Notification" element={<Notification />} />
-              <Route path="/Settings" element={<Settings />} />
-              <Route path="/Profile" element={<Profile />} />
-            </Routes>
-          </Router>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/Newsfeed" element={<Newsfeed />} />
+            <Route path="/Messages" element={<Messages />} />
+            <Route path="/Notification" element={<Notification />} />
+            <Route path="/Settings" element={<Settings />} />
+            <Route path="/Profile" element={<Profile />} />
+          </Routes>
           <div>
             <button onClick={notify}>Notify !</button>
             <ToastContainer />
@@ -80,14 +78,17 @@ const styles = {
     // Added this to push the nav left and the ads right
     justifyContent: "space-between",
     height: "100%",
+    overflow: "hidden",
     backgroundColor: "#f0f0f0",
   },
   navigation: {
-    display: "flex",
+    // display: "flex",
   },
   middle: {
-    display: "flex",
-    flexDirection: "column",
+    // display: "flex",
+    // flexDirection: "column",
+    overflow: "hidden",
+    width: "60%",
     padding: "2%",
     color: "#9b5de5ff",
   },
@@ -96,8 +97,17 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     background: "#f0f0f0",
-    paddingLeft: 20,
-    paddingRight: 20,
+    padding: '2%',
     color: "#00bbf9ff",
   },
 };
+
+
+
+//Steps when creating your layout with Flexbox
+// 1. Define the parent container as a flex container.
+// display: flex;
+// 2. Define the direction of the flex items.
+// flexDirection: row; // or column
+// 3. Define the alignment of the flex items.
+// justifyContent: space-between; // or space-around, center, etc.

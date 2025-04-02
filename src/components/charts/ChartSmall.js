@@ -26,7 +26,7 @@ const ChartSmall = ({chartSmall}) => {
     return (
         <article key={chartSmall.id} style={styles.card}>
             <h1 style={styles.h1}>{chartSmall.chartHeader}</h1>
-            <PieChart width={600} height={400}>
+            <PieChart width={200} height={100}>
             <Pie
             dataKey="value"
             data={data01}
@@ -61,7 +61,7 @@ const styles = {
     boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
     transition: "0.3s",
     minHeight: '100%',
-    width: '350px',
+    // width: '350px',
     margin: "1%",
     paddingLeft: "1%",
     paddingRight: '1%',

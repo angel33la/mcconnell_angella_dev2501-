@@ -1,41 +1,32 @@
 import React from 'react';
 //import styled from 'styled-components';
 //links
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 import { NavLink } from 'react-router';
 // components
 import { FaVideo, FaEnvelope, FaAddressCard, FaNewspaper } from 'react-icons/fa';
 
-
 const Navigation = () => {
         return (
-          <NavLink style={styles.navigation}>
+          <nav style={styles.navigation}>
             {/* links to components */}
-            <Link to="/Dashboard" style={styles.navName}>
-              <span style={styles.rightIcons}>
-                <FaAddressCard />
-              </span>
-              {"Dashboard"}
-            </Link>
-            <NavLink to="/Newsfeed" style={styles.navName}>
-              <span style={styles.rightIcons}>
-                <FaNewspaper />
-              </span>
-              {"Newsfeed"}
+            <NavLink to="/Dashboard" style={styles.navName}>
+              <FaAddressCard />
+              Dashboard
             </NavLink>
-            <Link to="/Messages" style={styles.navName}>
-              <span style={styles.rightIcons}>
-                <FaEnvelope />
-              </span>
-              {"Messages"}
-            </Link>
-            <Link to="/Notification" style={styles.navName}>
-              <span style={styles.rightIcons}>
-                <FaVideo />
-              </span>
-              {"Watch"}
-            </Link>
-          </NavLink>
+            <NavLink to="/Newsfeed" style={styles.navName}>
+              <FaNewspaper />
+              Newsfeed
+            </NavLink>
+            <NavLink to="/Messages" style={styles.navName}>
+              <FaEnvelope />
+              Messages
+            </NavLink>
+            <NavLink to="/Notification" style={styles.navName}>
+              <FaVideo />
+              Watch
+            </NavLink>
+          </nav>
         );
     }
 
@@ -61,6 +52,10 @@ const styles = {
     color: "#fff",
   },
   navName: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
     padding: "40px",
     border: "3px solid #9b5de5ff",
     color: " #9b5de5ff",
@@ -68,7 +63,7 @@ const styles = {
     textDecoration: "none",
     fontWeight: "bold",
     fontSize: "1.5rem",
-    textAlign: "center",
+    // textAlign: "center",
     marginBottom: "1rem",
     borderRadius: "5px",
   },
