@@ -26,18 +26,20 @@ function App() {
     <div>
       <Header pgTitle="MingoBook" searchPlaceholder="Search" />
       <main style={styles.container}>
-        <Navigation />
+        <Navigation style={styles.navigation} />
         {/* <main style={styles.main}> */}
         <section style={styles.middle}>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/Dashboard" element={<Dashboard />} />
-            <Route path="/Newsfeed" element={<Newsfeed />} />
-            <Route path="/Messages" element={<Messages />} />
-            <Route path="/Notification" element={<Notification />} />
-            <Route path="/Settings" element={<Settings />} />
-            <Route path="/Profile" element={<Profile />} />
-          </Routes>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/Dashboard" element={<Dashboard />} />
+              <Route path="/Newsfeed" element={<Newsfeed />} />
+              <Route path="/Messages" element={<Messages />} />
+              <Route path="/Notification" element={<Notification />} />
+              <Route path="/Settings" element={<Settings />} />
+              <Route path="/Profile" element={<Profile />} />
+            </Routes>
+          </Router>
           <div>
             <button onClick={notify}>Notify !</button>
             <ToastContainer />
