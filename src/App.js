@@ -1,3 +1,4 @@
+import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router";
 import Header from "./components/Header.js";
 import Navigation from "./components/Navigation.js";
