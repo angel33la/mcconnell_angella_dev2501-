@@ -14,23 +14,20 @@ import AdImage from "./images/bombayComm.jpg";
 import AdImage2 from "./images/glassesComm.jpg";
 import AdImage3 from "./images/iceCreamComm.jpg";
 import Profile from "./pages/Profile.js";
-import { ToastContainer, toast } from "react-toastify";
 
-import "react-toastify/dist/ReactToastify.css";
 // minified version is also included
 // import 'react-toastify/dist/ReactToastify.min.css';
 
 //parent component
 function App() {
-  const notify = () => toast("Wow so easy !");
   return (
+    <Router>
     <div>
       <Header pgTitle="MingoBook" searchPlaceholder="Search" />
       <main style={styles.container}>
         <Navigation style={styles.navigation} />
         {/* <main style={styles.main}> */}
         <section style={styles.middle}>
-          <Router>
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/Dashboard" element={<Dashboard />} />
@@ -40,12 +37,7 @@ function App() {
               <Route path="/Settings" element={<Settings />} />
               <Route path="/Profile" element={<Profile />} />
             </Routes>
-          </Router>
-          <div>
-            <button onClick={notify}>Notify !</button>
-            <ToastContainer />
-          </div>
-        </section>
+          </section>
         <aside style={styles.aside}>
           Advertisers
           <AdCard
@@ -69,6 +61,7 @@ function App() {
         </aside>
       </main>
     </div>
+    </Router>
   );
 }
 
